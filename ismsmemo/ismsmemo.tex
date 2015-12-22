@@ -1,0 +1,202 @@
+% $Id$
+\documentclass[a4paper]{llncs}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{csquotes}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
+\addbibresource{ismsmemo.bib}
+
+\usepackage{verbatim}
+\let\solution\comment%
+
+\pagestyle{plain}
+
+% XXX translate to english, add enisa literature
+
+\begin{document}
+\title{Memo: Ledningssystem för informationssäkerhet}
+\author{%
+  Carina Bengtsson
+  \and
+  Daniel Bosk
+}
+\institute{%
+  Department of Information and Communication Systems\\
+  Mid Sweden University, Sundsvall
+}
+\date{\today}
+
+\maketitle
+
+
+\section{Introduktion}
+\label{sec:introduction}
+\noindent
+Denna uppgift fokuserar på ledningssystem för informationssäkerhet (LIS), det 
+vill säga det system som leder en verksamhets informationssäkerhetsarbete.
+
+
+\section{Syfte}
+\label{sec:aim}
+\noindent
+Syftet med uppgiften är:
+\begin{itemize}
+  \input{aims.tex}
+\end{itemize}
+
+
+\section{Läsanvisningar}
+\noindent
+\input{literature.tex}
+
+
+\section{Genomförande}\label{Work}
+\noindent
+Genomförandet av uppgiften består av fyra deluppgifter.
+En inledande del om ledningssystem, gällande författningar i Sverige, 
+framgångsfaktorer och en engagerad ledning.
+
+\subsection{Ledningssystem och ledningssystem för informationssäkerhet}
+\noindent
+I en kort text om maximalt 350 ord, beskriv vad ett ledningssystem och ett 
+ledningssystem för informationssäkerhet (LIS) är.
+Beskriv också hur ett LIS fungerar och är uppbyggt.
+
+\subsection{Krav enligt MSBFS 2009:10}
+\noindent
+I ett ledningssystem för informationssäkerhet ingår vissa arbetsuppgifter för 
+verkamheten.
+Myndigheten för samhällsskydd och beredskap (MSB) har i sin författningssamling 
+MSBFS 2009:10~\cite{MSBFS2009:10}, som är bindande för statliga myndigheter, 
+fastställt i 4 § att myndigheterna ska:
+\begin{enumerate}
+  \item upprätta en informationssäkerhetspolicy och andra styrande dokument,
+  \item utse en eller flera personer som leder och samordnar arbetet med 
+    informationssäkerhet,
+  \item klassificera sin information med utgångspunkt i krav på 
+    konfidentialitet, riktighet och tillgänglighet,
+  \item använda riskanalyser för att bestämma hur risker ska hanteras samt 
+    vilka åtgärder som ska vidtas, och
+  \item dokumentera viktiga granskningar och säkerhetsåtgärder.
+\end{enumerate}
+Vidare föreskrivs i 5 § att
+\begin{enumerate}\setcounter{enumi}{5}
+  \item ledningen ska hålla sig informerad om arbetet och minst en gång per år 
+    följa upp och utvärdera informationssäkerhetsarbetet.
+\end{enumerate}
+
+Reflektera kortfattat punkterna 1, 2 och 3 \emph{samt} en av punkterna 4, 
+5 eller 6.
+Skriv ner varför du tycker att respektive krav är viktiga alternativt mindre 
+viktiga att genomföra i en organisation.
+Observera att din tänkta organisation ej behöver vara statlig myndighet.
+Du skriver maximalt 150 ord för respektive punkt.
+
+\subsection{Framgångsfaktorer}
+\noindent
+Att implementera ett ledningssystem i en verksamhet är ett omfattande arbete.
+I metodstödet framkommer vissa framgångsfaktorer för att lyckas.
+Förklara dessa kortfattat om maximalt 150 ord totalt.
+
+\subsection{En engagerad ledning}
+\noindent
+Vilka argument skulle du använda för att motivera en ledning till att fatta 
+beslut om att implementera ett LIS\@?
+Skriv ner minst tre argument och motivera varför.
+Dessa bör omfatta maximalt 150 ord totalt.
+
+
+\section{Examination}
+\label{sec:examination}
+\noindent
+Denna uppgift kommer att examineras genom ett skriftligt PM som lämnas in som 
+ett PDF-dokument.
+Detta ska innehålla uppgifterna från \cref{Work}:
+\begin{exercise}
+  Ledningssystem och Ledningssystem för informationssäkerhet (350 ord);
+  \begin{solution}
+    Betyg: F-C.
+
+    Ledningssystemet beskrivs i \emph{Introduktion till 
+      metodstödet}~\cite{MSB2011itm}, med början i avsnitt 1.2 
+    \enquote{Ledningssystem för informationssäkerhet}.
+    Bilaga A i samma dokument förklarar också LIS på ett bra sätt.
+    Ett ledningssystem är kort:
+    \begin{itemize}
+      \item Ett \enquote{system} för att leda verksamheten.
+      \item Andra exempel: kvalitetsledningssystem, miljöledningssystem.
+    \end{itemize}
+
+    Ett ledningssystem för informationssäkerhet är ett specialfall av 
+    ledningssystem, i korthet:
+    \begin{itemize}
+      \item Ett LIS styr verksamhetens informationssäkerhet.
+        Förklarar också \emph{hur} man arbetar för att hålla ordning på 
+        informationssäkerheten.
+      \item Integreras med övrigt ledningssystem.
+      \item Finns internationella standarder för detta: ISO 27000-serien.
+      \item Metodstödet beskriver hur man bygger upp ett LIS som en PDCA-cykel 
+        (förbättringscykel) -- strävar mot ständiga förbättringar.
+      \item Ett LIS ska anpassas till verksamhetens behov -- metodstödet ska 
+        ses som ett smörgåsbord.
+      \item Förordningen MSBFS 2009:10~\cite{MSBFS2009:10} beskriver 
+        skall-kraven för myndigheters LIS\@.
+    \end{itemize}
+  \end{solution}
+  \end{exercise}
+
+  \begin{exercise}
+  Krav enligt MSBFS 2009:10, punkterna 1--3 samt en av punkterna 4--6 (600 
+  ord);
+  \begin{solution}
+    Betyg: F eller P.
+
+    Se MSBFS 2009:10~\cite{MSBFS2009:10}.
+  \end{solution}
+\end{exercise}
+
+  \begin{exercise}
+  Framgångsfaktorer (150 ord); samt
+  \begin{solution}
+    Betyg: F-C.
+
+    Beskrivs i \emph{Introduktion till metodstödet}~\cite{MSB2011itm}, avsnitt 
+    2 \emph{Framgångsfaktorer}.
+    De framgångsfaktorer som ska beskrivas är
+    \begin{itemize}
+      \item ledningens engagemang,
+      \item förankring i och kunskap om organisationen,
+      \item tillräckliga resurser, och
+      \item verksamhetsanpassning.
+    \end{itemize}
+
+    De ska förklara något från alla delar för att få full pott.
+    (Det är nog lättast om du själv läser och får en uppfattning om hur de ska 
+    beskriva framgångsfaktorerna -- ganska lite text så det är svårt att 
+    sammanfatta i punktform.)
+    Dra av ett betygssteg för varje faktor som är otillräcklig.
+  \end{solution}
+\end{exercise}
+
+\begin{exercise}
+  En engagerad ledning (150 ord).
+  \begin{solution}
+    Betyg: F eller P.
+
+    Betyg ska inte baseras på om de anger MSB:s förslag eller ej.
+    Värdera hur de resonerar kring antingen MSB:s eller deras egna förslag.
+    Om de väljer att använda sig av MSB:s förslag hittas de i \emph{Säkra 
+    ledningens engagemang}~\cite{MSB2011sle}, avsnitt 3.2 \emph{Argument för 
+    att införa ett LIS i organisationen}.
+  \end{solution}
+\end{exercise}
+
+Totalt ska ditt PM omfatta mellan 1000--1250 ord, vara skrivet med akademisk 
+svenska eller engelska och ha korrekta referenser.
+
+
+\printbibliography{}
+\end{document}
