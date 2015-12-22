@@ -1,0 +1,103 @@
+% $Id$
+\documentclass[a4paper]{llncs}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
+\addbibresource{gapproject.bib}
+
+\pagestyle{plain}
+
+\begin{document}
+\title{Project: Analys av informationssäkerheten}
+\author{%
+  Daniel Bosk
+  \and
+  Lennart Franked
+}
+\institute{%
+  Department of Information and Communication Systems\\
+  Mid Sweden University, Sundsvall
+}
+\date{\today}
+
+\maketitle
+
+% XXX must clarify this instruction
+\section{Introduktion}
+
+IT-säkerhet är en process.
+En IT-miljö måste systematiskt granskas för att kunna upprätthålla säkerheten.
+Detta är extra tydligt i de senaste årens nyheter, då ett flertal stora globala 
+företag blev uppmärksammade den hårda vägen på att de hade stora brister 
+i säkerheten~\cite[se][]{Fisher2011rsa,Hunt2011abs,Cluley2012twp,%
+  Oberheide2010bao,Cubrilovic2009rhf,%
+  Jones2013targethack,Ducklin2014targethack,Zetter2014targethack%
+}.
+
+Syftet med uppgiften är att du skall fördjupa dina kunskaper i analys av 
+informationssäkerheten i en verksamhet.
+Till din hjälp har du kurslitteraturen för att utforma din analys.
+Du ska genomföra en gapanalys av informationssäkerheten på ett företag 
+alternativt en avdelning på ett större företag eller organisation.
+
+
+\section{Mål}
+
+Målet med projektet är:
+\begin{itemize}
+	\input{aims.tex}
+\end{itemize}
+
+
+\section{Genomförande}
+\noindent
+Du ska genomföra en del av en gapanalys av hela eller en del av företagets 
+verksamhet.
+Du ska alltså identifiera risker som finns i företagets informationshantering.
+Därefter ska du ta fram ett förslag på åtgärder som företaget kan använda sig 
+av i sitt vidare arbete med informationssäkerhet.
+
+Utgå från den del av ISO 27000 som finns som bilaga i MSB:s ramverk 
+\cite{MSB2011gb}.
+Du väljer ett av kapitlen och genomför gapanalysen bara för det kapitlet.
+(Om du väljer ett av de väldigt korta kapitlen, då måste du naturligtvis välja 
+något fler.)
+
+
+\section{Examination}
+
+Sammanställ en rapport för din gapanalys.
+Ett försättsblad innehållandes följande formalia måste finnas med:
+kurskod och -namn, rapporttitel, författarnas namn samt datum.
+
+Rapporten skall därefter följa exemplet på mall i MSB:s metodstöd \citep[bilaga 
+C]{MSB2011gap}.
+Rapporten ska vara utformad för att lämnas till företaget för användning i sitt
+arbete med informationssäkerheten.
+En utskriven kopia av rapporten lämnas till företaget.
+
+En krypterad och signerad digital kopia av rapporten lämnas in via 
+lärplattformen.
+Rapporten ska vara krypterad med rättande lärares publika nyckel, denna 
+återfinns på servern pgp.mit.edu.
+Verifiera att det är korrekt nyckel du använder.
+
+% XXX muntlig presentation av projekt?
+%Projektet redovisas även muntligen i slutet av kursen.
+%Redovisningen ska vara av akademisk karaktär, tydlig och med slides, och vara 
+%cirka 10 minuter.
+%Det är obligatoriskt att styrka sin identitet med legitimation vid 
+%presentationstillfället.
+
+Uppgiften kan lösas enskilt alternativt i grupp om två personer.
+Om ni väljer att lösa uppgiften i grupp måste ni själva försöka ordna någon
+att samarbeta med.
+%Examinator kommer att välja en i gruppen som får genomföra hela presentationen, 
+%kom väl förberedda.
+
+
+\printbibliography{}
+\end{document}
