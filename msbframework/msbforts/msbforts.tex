@@ -15,11 +15,10 @@
 \setbeamertemplate{bibliography item}[text]
 
 \mode<presentation>{%
-  \usetheme{Frankfurt}
+  \usetheme{Berlin}
   \setbeamercovered{transparent}
-  \usecolortheme{seagull}
+  \setbeamertemplate{footline}{\insertframenumber}
 }
-\setbeamertemplate{footline}{\insertframenumber}
 
 \title[Intro infosäk]{%
   Fortsättning av\\
@@ -52,13 +51,6 @@
     \end{multicols}
   \end{frame}
 }
-%\AtBeginSubsection[]{%
-%  \begin{frame}<beamer>
-%    \begin{center}
-%      \insertsectionhead
-%    \end{center}
-%  \end{frame}
-%}
 
 \begin{document}
 
@@ -84,49 +76,10 @@
 %   15 and 30 frames, all told.
 
 
-\section{Repetition}
-
-\subsection{Introduktion}
-\begin{frame}{Vad är informationssäkerhet?}
-  \begin{itemize}
-    \item Uppstår tillsammans med andra processer och verksamheter.
-    \item Informationssäkerheten i en verksamhet har inget egenvärde måste 
-      integreras för att kunna skydda verksamheten.
-  \end{itemize}
-\end{frame}
-\begin{frame}{Krav och förväntningar på informationen}
-  \begin{description}
-    \item[Konfidentialitet] Informationen ska endast vara tillgänglig för 
-      behörig.
-    \item[Tillgänglighet] Informationen är användbar och finns till hands när 
-      den behövs.
-    \item[Riktighet] Informationen är exakt och fullständig.
-  \end{description}
-\end{frame}
-\begin{frame}{Struktur}
-  \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-process.png}
-    \caption{Att arbeta med informationssäkerhet.}
-  \end{figure}
-\end{frame}
-\begin{frame}{Säkerheten är inte starkare än den svagaste länken}
-  \begin{itemize}
-    \item Svårgissat lösenord på post-it bredvid datorn.
-    \item Oknäckbart kodlås på glasdörr.
-    \item Det måste finnas förutsättningar för att arbeta säkert.
-  \end{itemize}
-\end{frame}
-\begin{frame}{Informationssäkerhet på olika nivåer}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{infosak-levels.png}
-    \caption{De olika nivåerna där informationssäkerhetsarbete kan bedrivas.}
-  \end{figure}
-\end{frame}
-
-
 \section{Analys}
 
 \subsection{Verksamhetsanalys}
+
 \begin{frame}{Vad ska skyddas?}
   \begin{itemize}
     \item Vilka informationstillgångar har vi och hur skyddsvärda är de?
@@ -138,6 +91,7 @@
       \end{itemize}
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Hitta informationstillgångarna}
   \begin{itemize}
     \item Tidigare kartläggningar?
@@ -148,12 +102,14 @@
     \item Funktionsvis?
   \end{itemize}
 \end{frame}
+
 \begin{frame}{MSB:s förslag på klassificeringsmodell}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{msb-klassificering.png}
     \caption{MSB:s förslag på klassificeringsmodell.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Universitetets förslag på klassificeringsmodell}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-klassificering.png}
@@ -163,6 +119,7 @@
 \end{frame}
 
 \subsection{Riskanalys}
+
 \begin{frame}{Riskanalys}
   \begin{itemize}
     \item Används för att anpassa skyddet efter verksamhetens tillgångar.
@@ -174,20 +131,27 @@
       \end{itemize}
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Riskmatris}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{riskmatris.png}
     \caption{En riskmatris.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Formella metoder?}
-  \begin{center}
-    Tillämpa formella metoder för att genomföra riskanalysen?
-  \end{center}
+  \begin{itemize}
+    \item Finns forskning som tagit fram mer formella metoder att göra detta.
+    \item Bättre då det ger mer objektivitet.
+    \item Dock är de svårare att använda.
+  \end{itemize}
 \end{frame}
 
-\subsection{Gapanalys}
-\begin{frame}{Gapanalys}
+\section{Gapanalys}
+
+\subsection{Vad är gapanalys?}
+
+\begin{frame}
   \begin{itemize}
     \item Analysera gapet mellan verksamhetens nuvarande och uppsatta 
       informationssäkerhetsmål.
@@ -197,7 +161,8 @@
       i jämförelse med förväntningarna i ISO 27002.
   \end{itemize}
 \end{frame}
-\begin{frame}{Gapanalys}
+
+\begin{frame}
   Undersöker vilka säkerhetsåtgärder som
   \begin{itemize}
     \item finns och fungerar,
@@ -206,6 +171,7 @@
     \item inte behövs.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{När genomförs gapanalys?}
   \begin{itemize}
     \item Om man vill införa LIS\@.
@@ -214,6 +180,9 @@
     \item Om man vill ställa krav på sin informationssäkerhetsnivå.
   \end{itemize}
 \end{frame}
+
+\subsection{Hur ska den genomföras?}
+
 \begin{frame}{Krav för gapanalys}
   Analysledaren måste
   \begin{itemize}
@@ -222,14 +191,18 @@
     \item ha god kännedom och förståelse för normerna i standarden.
   \end{itemize}
 \end{frame}
-\begin{frame}{Hur?}
+
+\begin{frame}
   \begin{itemize}
     \item Ha ett tydligt beslut att gapanalys ska genomföras,
     \item eller ha mandat att fatta detta beslut.
     \item Använd MSB:s checklista för gapanalys~\cite{MSB2011gb}.
   \end{itemize}
 \end{frame}
-\begin{frame}{Checklistan}
+
+\subsection{En checklista}
+
+\begin{frame}
   \begin{itemize}
     \item Utgår från ISO 27002.
     \item Innehåller 133 säkerhetsåtgärder.
@@ -240,12 +213,16 @@
     \item Totalt finns 11 kapitel.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Checklistan}
   \begin{itemize}
     \item Av totalt 133 säkerhetsåtgärder är 62 (55) kritiska att införa.
     \item De kritiska åtgärderna är en basnivå för informationssäkerheten.
   \end{itemize}
 \end{frame}
+
+\subsection{Praktiskt genomförande}
+
 \begin{frame}{Vem?}
   \begin{itemize}
     \item Analysledare.
@@ -254,6 +231,7 @@
     \item Behöver inte nödvändigtvis vara chefer.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Praktiskt genomförande}
   \begin{itemize}
     \item Boka in möte med områdesexperterna som ska besvara frågorna.
@@ -262,30 +240,37 @@
     \item Börja med nivåstyrande frågorna.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Nivåstyrande frågor}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{gap-nivafragor.png}
     \caption{Nivåstyrande frågor som ger bedömt värde på säkerhetsåtgärd.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Sammanställning av delavsnitt}
   \begin{figure}
     \includegraphics[width=\textwidth]{gap-sammanstallning.png}
     \caption{Betygen för delavsnitt ger betyg för avsnitt.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Sammanställning av avsnitt}
   \begin{figure}
     \includegraphics[width=\textwidth]{gap-kapitel.png}
     \caption{Betygen för avsnitt ger betyg för kapitel.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Sammanställning av betyg}
   \begin{figure}
     \includegraphics[width=\textwidth]{gap-betyg.png}
     \caption{Betygen för kapitlen ger ett totalbetyg.}
   \end{figure}
 \end{frame}
+
+\subsection{Översikt av ISO 27002}
+
 \begin{frame}{ISO 27002}
   \begin{enumerate}
     \item Säkerhetspolicy
@@ -301,6 +286,7 @@
     \item Efterlevnad
   \end{enumerate}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Säkerhetspolicy}
   \begin{itemize}
     \item Ange en viljeriktning för verksamhetens informationssäkerhetsarbete.
@@ -308,6 +294,7 @@
     \item Har en kritisk säkerhetsåtgärd: policydokument för infosäk.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Organisation av informationssäkerheten}
   \begin{itemize}
     \item Ska finnas ett ramverk inom organisationen som styr 
@@ -317,6 +304,7 @@
     \item Innehåller sex kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Hantering av tillgångar}
   \begin{itemize}
     \item Organisationens tillgångar ska få ett lämpligt skydd.
@@ -324,6 +312,7 @@
       riktlinjer för klassificering.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Personalresurser och säkerhet}
   \begin{itemize}
     \item Ska ta informationssäkerheten i beaktande innan, under och efter 
@@ -333,6 +322,7 @@
     \item Har tre kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Fysisk och miljörelaterad säkerhet}
   \begin{itemize}
     \item Förhindra obehörigt tillträde.
@@ -340,6 +330,7 @@
     \item Har fyra kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Styrning av kommunikation och drift}
   \begin{itemize}
     \item Informationsbehandlingsresurser ska ha en säker drift.
@@ -347,6 +338,7 @@
     \item Har 14 kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Styrning av åtkomst}
   \begin{itemize}
     \item Åtkomst till system bör styras utifrån verksamhets- och 
@@ -354,6 +346,7 @@
     \item Har tio kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Anskaffning, utveckling och underhåll av 
   informationssystem}
   \begin{itemize}
@@ -362,6 +355,7 @@
     \item Har sju kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Hantering av informationssäkerhetsincidenter}
   \begin{itemize}
     \item Inträffade incidenter ska tas om hand.
@@ -369,6 +363,7 @@
     \item Har två kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Kontinuitetsplanering för verksamheten}
   \begin{itemize}
     \item Motverka avbrott i verksamheten.
@@ -376,6 +371,7 @@
     \item Har tre kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
 \begin{frame}{ISO 27002}{Efterlevnad}
   \begin{itemize}
     \item Organisationen ska efterleva de externa och interna krav som finns på 
@@ -383,6 +379,9 @@
     \item Har tre kritiska säkerhetsåtgärder.
   \end{itemize}
 \end{frame}
+
+\subsection{Resultat}
+
 \begin{frame}{Resultat av gapanalys}
   \begin{itemize}
     \item Vilket skydd är infört?
@@ -391,6 +390,7 @@
     \item Hur kan man gå vidare med att implementera LIS\@?
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Slutrapport}
   \begin{itemize}
     \item Hur är arbetet genomfört?
@@ -405,12 +405,14 @@
 \section{Utforma}
 
 \subsection{Åtgärder}
+
 \begin{frame}{Att välja säkerhetsåtgärder}
   \begin{figure}
     \includegraphics[width=\textwidth]{msb-atgarder.png}
     \caption{Att välja säkerhetsåtgärder.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Att välja säkerhetsåtgärder}
   \begin{description}
     \item[Best practice] Utgår från olika säkerhetsåtgärder i ISO 27002.
