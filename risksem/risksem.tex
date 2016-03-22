@@ -1,10 +1,9 @@
-% $Id$
 \documentclass[a4paper]{llncs}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-\usepackage{cleveref}
+\usepackage[swedish]{cleveref}
 \usepackage{marginnote}
 \usepackage{framed}
 \usepackage{booktabs}
@@ -22,9 +21,11 @@
 % XXX translate to english, add enisa literature
 
 \begin{document}
-\title{Seminar: Verksamhetsanalys och riskanalys}
+\title{Seminarium: Verksamhetsanalys och riskanalys}
 \author{%
   Carina Bengtsson
+  \and
+  Lennart Franked
 }
 \institute{%
   Department of Information and Communication Systems\\
@@ -36,45 +37,38 @@
 
 \section{Introduktion}
 \label{sec:introduction}
-\noindent
-Denna uppgift fokuserar på att praktiskt utforma en klassificeringsmodell samt 
-genomföra en mindre verksamhetsanalys.
-
-Resultatet av denna uppgift kommer sedan att diskuteras och vidareutvecklas 
-i en riskanalys under seminarium S1.
 
 Detta seminarium fokuserar på att diskutera vikten av en verksamhetsanpassad 
 klassificeringsmodell, samt att praktiskt genomföra en enklare verksamhets- och 
 riskanalys.
-
-Utgångspunkten för seminariet är resultatet av den promemoria som behandlade 
-området verksamhets- och riskanalys.
-
+Utgångspunkten för seminariet är en klassificeringsmodell som ni kommer att 
+utveckla inför seminariet.
 
 
 \section{Syfte}
 \label{sec:aim}
-\noindent
+
 Syftet med uppgiften är:
 \begin{itemize}
   \input{aims.tex}
 \end{itemize}
 
+
 \section{Läsanvisningar}
-\noindent
+
 \input{literature.tex}
 
 
 \section{Utveckling av klassificeringsmodell}
 \label{sec:work}
-\noindent
+
 Genomförandet av uppgiften består av tre deluppgifter.
 Den första delen handlar om att utforma en egen klassificeringsmodell, den 
 andra om att använda den och till slut ska den förklaras.
 
 \subsection{Utforma en klassificeringsmodell}
 \label{sec:develop}
-\noindent
+
 Utveckla en enklare klassificeringsmodell \emph{som är anpassad} efter den 
 verksamhet du har blivit tilldelad:
 \begin{itemize}
@@ -120,8 +114,9 @@ verksamhet:
   följande:
   \begin{center}
     \begin{tabular}{ll}
-      \textbf{Område} & \textbf{Klass} \\
       \toprule
+      \textbf{Område} & \textbf{Klass} \\
+      \midrule
       Lönelistor  & K\(x\) \\
                   & T\(y\) \\
                   & R\(z\) \\
@@ -149,97 +144,98 @@ Omfattningen bör vara maximalt 500 ord.
 
 
 \section{Förberedelse för seminariet}
-\noindent
-Genomförandet av seminariet består av tre delar motsvarande delarna i den 
-förberedande promemorian.
+
+Genomförandet av seminariet består av tre delar motsvarande delarna 
+i utvecklingen av klassificeringsmodellen.
 
 \subsection{Redovisning av klassificeringsmodell}
 \label{sec:present}
-\noindent
-Tre personer i respektive grupp kommer att få förmånen att presentera sin 
-utvecklade klassificeringsmodell.
+
+En till tre personer i respektive grupp kommer att få förmånen att presentera 
+sin utvecklade klassificeringsmodell.
 Förbered en kort presentation om cirka två minuter, då är du beredd utifall att 
 du blir en av de utvalda.
 
-\subsection{Använda klassificeringsmodell}
+\subsection{Användning av klassificeringsmodell}
 \label{sec:use}
-\noindent
+
 Några nya informationstillgångar kommer att ges under seminariet.
-Vi kommer tillsammans att placera dessa i de presenterade 
-klassificeringsmodellerna.
+Ni kommer att delas upp i mindre grupper, där ni inom grupperna diskuterar er 
+fram till vart ni vill placera dessa informationstillgångar i en utvald 
+klassificeringsmodell.
+Varje grupp presenterar därefter sitt förslag med tillhörande motivering.
 
 \subsection{Riskanalys}
 \label{sec:risk}
-\noindent
-Tillsammans kommer vi att välja ut minst en av informationstillgångarna från 
-uppgift \ref{sec:use} som vi genomför en riskanalys på.
+
+I samma grupper som ni jobbade med under \cref{sec:use}, ska ni nu utföra en 
+riskanalys på en informationstillgång som seminarieledaren ger er.
+Varje grupp ska komma fram till minst fem (5) hot mot vald 
+informationstillgång.
+Varje grupp ska presentera sina resultat inför klassen genom att placera ut 
+sina hot i en konsekvens- och sannolikhetsmatris med tillhörande motivering.
 
 
 \section{Examination}
 \label{sec:examination}
-\noindent
+
 Denna uppgift kommer att examineras genom ett skriftligt PM som lämnas in som 
-ett PDF-dokument.
-Detta ska innehålla uppgifterna från \cref{sec:work}:
-\begin{exercise}
-  Utforma klassificeringsmodell,
-  \begin{solution}
-    Betyg: F eller P.
+ett PDF-dokument och genom aktivt deltagande under seminariet.
+PM:et ska innehålla uppgifterna från \cref{sec:work}:
+\begin{enumerate}
+  \item utformning av klassificeringsmodell,
+    \begin{solution}
+      Betyg: F eller P.
 
-    För att få godkänt krävs att man har en klassificering för perspektiven 
-    \emph{tillgänglighet}, \emph{riktighet} och \emph{konfidentialitet}.
-    Och att man på något sätt har minst en klass i varje perspektiv.
-  \end{solution}
-\end{exercise}
+      För att få godkänt krävs att man har en klassificering för perspektiven 
+      \emph{tillgänglighet}, \emph{riktighet} och \emph{konfidentialitet}.
+      Och att man på något sätt har minst en klass i varje perspektiv.
+    \end{solution}
 
-\begin{exercise}
-  Använda klassificeringsmodell, och
-  \begin{solution}
-    Betyg: F eller P.
+  \item användning av klassificeringsmodell, och
+    \begin{solution}
+      Betyg: F eller P.
 
-    För att få godkänt krävs att man använt sin utformade 
-    klassificeringsmodell, d.v.s.\ att alla givna informationstillgångar är 
-    klassificerade utifrån tillgänglighet, riktighet och konfidentialitet --
-    däremot kan vi nog aldrig säga att någon utförd klassificering är rätt 
-    eller fel.
-  \end{solution}
-\end{exercise}
+      För att få godkänt krävs att man använt sin utformade 
+      klassificeringsmodell, d.v.s.\ att alla givna informationstillgångar är 
+      klassificerade utifrån tillgänglighet, riktighet och konfidentialitet --
+      däremot kan vi nog aldrig säga att någon utförd klassificering är rätt 
+      eller fel.
+    \end{solution}
 
-\begin{exercise}
-  Förklaring av klassificeringsmodell, 500 ord.
-  \begin{solution}
-    Betyg: F-C.
+  \item förklaring av klassificeringsmodell, 500 ord.
+    \begin{solution}
+      Betyg: F-C.
 
-    Principen för klassificering finns 
-    i \emph{Verksamhetsanalys}~\cite{MSB2011v}, avsnitt 2.3 
-    \emph{Klassificering av informationstillgångar}.
-    Följande bör uppfyllas:
-    \begin{itemize}
-      \item Man bör få med att man tagit hänsyn till de förväntningar och krav 
-        som finns på verksamheten (interna och externa krav), antingen legala 
-        krav (mycket bra betyg) eller deras egna förväntningar (bra betyg).
-        Eller både och (superbra betyg).
-      \item Man bör på något sätt ha visat hänsyn till olika konsekvensnivåer 
-        för verksamheten i de olika klasser som utformas.
-        D.v.s.\ att de klasser som är utformade kan överföras till mer eller 
-        mindre allvarliga konsekvenser för verksamheten vid brist på någon av 
-        tillgänglighet, riktighet eller konfidentialitet.
-      \item Ett bra komplement för föregående punkter är att ge förslag på 
-        något som kan vara skyddsvärt för verksamheten, eller resonera kring de 
-        \enquote{givna informationstillgångarna} tidigare i PM:et.
-      \item Man bör vara reflekterande över utvecklingsmöjligheter och 
-        svårigheter i uppgiften (visa att man förstår komplexiteten av 
-        uppgiften).
-    \end{itemize}
-    Uppfyller de sista två punkterna bör de vara godkända.
-    Uppfyller de dessutom de första två punkterna höjer det deras betyg 
-    ytterligare.
-  \end{solution}
-\end{exercise}
+      Principen för klassificering finns 
+      i \emph{Verksamhetsanalys}~\cite{MSB2011v}, avsnitt 2.3 
+      \emph{Klassificering av informationstillgångar}.
+      Följande bör uppfyllas:
+      \begin{itemize}
+        \item Man bör få med att man tagit hänsyn till de förväntningar och krav 
+          som finns på verksamheten (interna och externa krav), antingen legala 
+          krav (mycket bra betyg) eller deras egna förväntningar (bra betyg).
+          Eller både och (superbra betyg).
+        \item Man bör på något sätt ha visat hänsyn till olika konsekvensnivåer 
+          för verksamheten i de olika klasser som utformas.
+          D.v.s.\ att de klasser som är utformade kan överföras till mer eller 
+          mindre allvarliga konsekvenser för verksamheten vid brist på någon av 
+          tillgänglighet, riktighet eller konfidentialitet.
+        \item Ett bra komplement för föregående punkter är att ge förslag på 
+          något som kan vara skyddsvärt för verksamheten, eller resonera kring de 
+          \enquote{givna informationstillgångarna} tidigare i PM:et.
+        \item Man bör vara reflekterande över utvecklingsmöjligheter och 
+          svårigheter i uppgiften (visa att man förstår komplexiteten av 
+          uppgiften).
+      \end{itemize}
+      Uppfyller de sista två punkterna bör de vara godkända.
+      Uppfyller de dessutom de första två punkterna höjer det deras betyg 
+      ytterligare.
+    \end{solution}
+\end{enumerate}
 
 Dokumentet ska vara skrivet med akademisk svenska eller engelska och ha 
 korrekta referenser.
-
 Aktivt deltagande i seminariet krävs för godkänt betyg.
 
 
@@ -247,115 +243,116 @@ Aktivt deltagande i seminariet krävs för godkänt betyg.
 
 
 \appendix
-\section{Kompletteringsuppgift}
-
-Denna kompletteringsuppgift gäller för de som ej medverkat vid seminariet om
-verksamhets- och riskanalys.
-Utgångspunkten för uppgiften är den promemoria som behandlade området
-verksamhets- och riskanalys.
-
-\subsection{Genomförande}
-
-Genomförandet av kompletteringsuppgiften består av tre delar: tillämpning av 
-klassificeringsmodell för att klassificera informationstillgångar, jämföra 
-klassificeringar för olika verksamheter och till sist genomföra en riskanalys.
-
-\subsection{Använda klassificeringsmodell}
-\label{sec:use}
-
-Placera in följande två informationstillgångar i klassificeringsmodellen som du 
-själv utvecklat i promemorian, placera in dem utifrån de krav du kommit fram 
-till finns för din verksamhet:
-\begin{itemize}
-  \item hyreskontrakt och
-  \item verksamhetsberättelse.
-\end{itemize}
-
-\subsection{Jämföra klassificeringar}
-\label{sec:compare}
-
-Redogör för hur du skulle resonerat om du istället skulle ha klassificerat de 
-två ovan informationstillgångarna i de verksamheterna som du ej blev tilldelad 
-för PM:et för verksamhets- och riskanalys.
-Exempelvis om du blev tilldelad den kommunala verksamheten, då resonerar du 
-kring hur du istället skulle klassificera ovan givna informationstillgångar för 
-ett universitet och ett reseföretag:
-\begin{itemize}
-  \item Vad finns det för likheter och skillnader i klassificeringen för 
-    respektive informationstillgång?
-  \item Skulle respektive informationstillgång klassificeras som mer, mindre 
-    eller lika kritiska som för din ursprungliga verksamhet?
-\end{itemize}
-
-\subsection{Riskanalys}
-\label{sec:risk}
-
-Välj ut en av de två informationstillgångarna från uppgift \ref{sec:use} för 
-att genomföra en riskanalys.
-Ange för vilken aspekt du gör analysen: konfidentialitet, tillgänglig\-het 
-eller riktighet.
-Identifiera minst tre hot och placera in dem i riskmatrisen.
-
-\begin{framed}\noindent
-  Tips:
-  \begin{itemize}
-    \item En riskanalys genomförs oftast på de informationstillgångar som anses 
-      vara med kritiska för verksamheten.
-      Exempelvis om du har verksamheten reseföretag, har fyra klasser i din 
-      modell och har klassificerat enligt följande:
-      \begin{center}
-        \begin{tabular}{ll}
-          \textbf{Område} & \textbf{Klass} \\
-          \hline\hline
-          Hyreskontrakt & K2 \\
-                        & T2 \\
-                        & R3 \\
-          \hline
-          Verksamhetsberättelse & K2 \\
-                                & T2 \\
-                                & \color{red}{R4} \\
-          \hline\hline
-        \end{tabular}
-      \end{center}
-      Då rekommenderas att göra en riskanalys \emph{gällande riktighet} för 
-      verksamhetsberättelsen.
-      (Ta då inte upp hot mot tillgänglighet och konfidentialitet.)
-
-    \item Använd gärna mallen i \cref{app:riskanalys} eller den i MSB:s 
-      dokument om riskanalys \cite[bilaga A]{MSB2011r} för att redovisa ditt 
-      resultat av riskanalysen.
-    \item Exempelvis ett hot mot riktigheten i verksamhetsberättelsen kan vara 
-      att ''någon utomstående ändrar medvetet i verksamhetsberättelsen
-      för att förvanska förra årets resultat, ändringen sker genom att
-      fysiskt sätta sig vid en dator som är olåst och göra ändringarna''.
-      \begin{itemize}
-        \item Uppskatta därefter konsekvensen av och sannolikheten för att 
-          detta inträffar i riskmatrisen.
-        \item Slutligen, beskriv vilka risker du tycker att verksamheten bör 
-          arbeta vidare med, och vilka risker du anser att man kan acceptera 
-          för tillfället.
-          (Använder du riskanalysmallen i \cref{app:riskanalys} räcker det 
-          med att du kryssar för det alternativ du vill använda dig av på 
-          respektive hot.)
-      \end{itemize}
-  \end{itemize}
-\end{framed}
-
-\subsection{Examination}
-\label{sec:Examination}
-
-Denna uppgift kommer att examineras genom \emph{ett} skriftligt dokument som 
-lämnas in i PDF-format.
-Om du väljer att använda mallar från MSB eller den i \cref{app:riskanalys} 
-måste du infoga dem i det dokument du lämnar in.
-Dokumentet ska innehålla uppgifterna från \cref{sec:work}:
-\begin{enumerate}
-  \item Använda klassificeringsmodell,
-  \item Jämföra klassificeringar, och
-  \item Riskanalys.
-\end{enumerate}
-
-
+%\section{Kompletteringsuppgift}
+%
+%Denna kompletteringsuppgift gäller för de som ej medverkat vid seminariet om
+%verksamhets- och riskanalys.
+%Utgångspunkten för uppgiften är den promemoria som behandlade området
+%verksamhets- och riskanalys.
+%
+%\subsection{Genomförande}
+%
+%Genomförandet av kompletteringsuppgiften består av tre delar: tillämpning av 
+%klassificeringsmodell för att klassificera informationstillgångar, jämföra 
+%klassificeringar för olika verksamheter och till sist genomföra en riskanalys.
+%
+%\subsection{Använda klassificeringsmodell}
+%\label{sec:use}
+%
+%Placera in följande två informationstillgångar i klassificeringsmodellen som du 
+%själv utvecklat i promemorian, placera in dem utifrån de krav du kommit fram 
+%till finns för din verksamhet:
+%\begin{itemize}
+%  \item hyreskontrakt och
+%  \item verksamhetsberättelse.
+%\end{itemize}
+%
+%\subsection{Jämföra klassificeringar}
+%\label{sec:compare}
+%
+%Redogör för hur du skulle resonerat om du istället skulle ha klassificerat de 
+%två ovan informationstillgångarna i de verksamheterna som du ej blev tilldelad 
+%för PM:et för verksamhets- och riskanalys.
+%Exempelvis om du blev tilldelad den kommunala verksamheten, då resonerar du 
+%kring hur du istället skulle klassificera ovan givna informationstillgångar för 
+%ett universitet och ett reseföretag:
+%\begin{itemize}
+%  \item Vad finns det för likheter och skillnader i klassificeringen för 
+%    respektive informationstillgång?
+%  \item Skulle respektive informationstillgång klassificeras som mer, mindre 
+%    eller lika kritiska som för din ursprungliga verksamhet?
+%\end{itemize}
+%
+%\subsection{Riskanalys}
+%\label{sec:risk}
+%
+%Välj ut en av de två informationstillgångarna från uppgift~\ref{sec:use} för 
+%att genomföra en riskanalys.
+%Ange för vilken aspekt du gör analysen: konfidentialitet, tillgänglig\-het 
+%eller riktighet.
+%Identifiera minst tre hot och placera in dem i riskmatrisen.
+%
+%\begin{framed}\noindent
+%  Tips:
+%  \begin{itemize}
+%    \item En riskanalys genomförs oftast på de informationstillgångar som anses 
+%      vara med kritiska för verksamheten.
+%      Exempelvis om du har verksamheten reseföretag, har fyra klasser i din 
+%      modell och har klassificerat enligt följande:
+%      \begin{center}
+%        \begin{tabular}{ll}
+%          \toprule
+%          \textbf{Område} & \textbf{Klass} \\
+%          \midrule
+%          Hyreskontrakt & K2 \\
+%                        & T2 \\
+%                        & R3 \\
+%          \midrule
+%          Verksamhetsberättelse & K2 \\
+%                                & T2 \\
+%                                & \color{red}{R4} \\
+%          \bottomrule
+%        \end{tabular}
+%      \end{center}
+%      Då rekommenderas att göra en riskanalys \emph{gällande riktighet} för 
+%      verksamhetsberättelsen.
+%      (Ta då inte upp hot mot tillgänglighet och konfidentialitet.)
+%
+%    \item Använd gärna mallen i \cref{app:riskanalys} eller den i MSB:s 
+%      dokument om riskanalys~\cite[bilaga A]{MSB2011r} för att redovisa ditt 
+%      resultat av riskanalysen.
+%    \item Exempelvis ett hot mot riktigheten i verksamhetsberättelsen kan vara 
+%      att \enquote{någon utomstående ändrar medvetet i verksamhetsberättelsen
+%      för att förvanska förra årets resultat, ändringen sker genom att
+%      fysiskt sätta sig vid en dator som är olåst och göra ändringarna}.
+%      \begin{itemize}
+%        \item Uppskatta därefter konsekvensen av och sannolikheten för att 
+%          detta inträffar i riskmatrisen.
+%        \item Slutligen, beskriv vilka risker du tycker att verksamheten bör 
+%          arbeta vidare med, och vilka risker du anser att man kan acceptera 
+%          för tillfället.
+%          (Använder du riskanalysmallen i \cref{app:riskanalys} räcker det 
+%          med att du kryssar för det alternativ du vill använda dig av på 
+%          respektive hot.)
+%      \end{itemize}
+%  \end{itemize}
+%\end{framed}
+%
+%\subsection{Examination}
+%\label{sec:Examination}
+%
+%Denna uppgift kommer att examineras genom \emph{ett} skriftligt dokument som 
+%lämnas in i PDF-format.
+%Om du väljer att använda mallar från MSB eller den i \cref{app:riskanalys} 
+%måste du infoga dem i det dokument du lämnar in.
+%Dokumentet ska innehålla uppgifterna från \cref{sec:work}:
+%\begin{enumerate}
+%  \item Använda klassificeringsmodell,
+%  \item Jämföra klassificeringar, och
+%  \item Riskanalys.
+%\end{enumerate}
+%
+%
 \section{Mall för riskanalys}
 \label{app:riskanalys}
 
