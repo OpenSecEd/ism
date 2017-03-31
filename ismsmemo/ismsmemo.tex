@@ -6,6 +6,7 @@
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
 \usepackage[swedish]{cleveref}
+\usepackage{acro}
 \usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
 \addbibresource{ismsmemo.bib}
 
@@ -14,15 +15,21 @@
 
 \pagestyle{plain}
 
+\DeclareAcronym{isms}
+{
+  short = ISMS,
+  long = Information Security Management Systems,
+}
+
 % XXX translate to english, add enisa literature
 
 \begin{document}
-\title{PM\@: Ledningssystem för informationssäkerhet}
+\title{PM\@: Information Security Management System}
 \author{%
-  Carina Bengtsson
+  Carina Bengtsson and Lennart Franked
 }
 \institute{%
-  Department of Information and Communication Systems\\
+  Department of Information Systems and Technologies\\
   Mid Sweden University, Sundsvall
 }
 \date{\today}
@@ -30,165 +37,159 @@
 \maketitle
 
 
-\section{Introduktion}
+\section{Introduction}
 \label{sec:introduction}
 
-Denna uppgift fokuserar på ledningssystem för informationssäkerhet (LIS), det 
-vill säga det system som leder en verksamhets informationssäkerhetsarbete.
+This assignments focus on \acp{isms}. The purpose of an \acp{isms} is to manage
+an organizations work within the field of information security.
 
-
-\section{Syfte}
+\section{Aim}
 \label{sec:aim}
 
-Syftet med uppgiften är:
+This assignment aims to:
 \begin{itemize}
   \input{aims.tex}
 \end{itemize}
 
 
-\section{Läsanvisningar}
+\section{Reading assignment}
 
 \input{literature.tex}
 
 
-\section{Genomförande}\label{Work}
+\section{Task}\label{Work}
 
-Genomförandet av uppgiften består av fyra deluppgifter.
-En inledande del om ledningssystem, gällande författningar i Sverige, 
-framgångsfaktorer och en engagerad ledning.
+This assignment contains four sub tasks, One introduction task covering
+\acp{isms}, including Swedish statutes, success stories and how to get a
+committed leadership.
 
-\subsection{Ledningssystem och ledningssystem för informationssäkerhet}
+\subsection{Information Security Management System}
+Shortly describe a management system is, and more specifically what an
+\acp{isms} is. Your description should also cover how an \acp{isms} is
+structured.
 
-I en kort text om maximalt 350 ord, beskriv vad ett ledningssystem och ett 
-ledningssystem för informationssäkerhet (LIS) är.
-Beskriv också hur ett LIS fungerar och är uppbyggt.
+\subsection{Legal requirements according to MSBFS 2009:10}
 
-\subsection{Krav enligt MSBFS 2009:10}
-
-I ett ledningssystem för informationssäkerhet ingår vissa arbetsuppgifter för 
-verkamheten.
-Myndigheten för samhällsskydd och beredskap (MSB) har i sin författningssamling 
-MSBFS 2009:10~\cite{MSBFS2009:10}, som är bindande för statliga myndigheter, 
-fastställt i 4 § att myndigheterna ska:
+In an \acp{isms}, there are certain work tasks defined for the organisation.
+The Swedish Civil Contingencies Agency (MSB) have defined in their statutes
+MSBFS 2009:10~\cite{MSBFS2009:10}, which is binding for governmental agencies, 
+stated that the governmental agencies should:
 \begin{enumerate}
-  \item upprätta en informationssäkerhetspolicy och andra styrande dokument,
-  \item utse en eller flera personer som leder och samordnar arbetet med 
-    informationssäkerhet,
-  \item klassificera sin information med utgångspunkt i krav på 
-    konfidentialitet, riktighet och tillgänglighet,
-  \item använda riskanalyser för att bestämma hur risker ska hanteras samt 
-    vilka åtgärder som ska vidtas, och
-  \item dokumentera viktiga granskningar och säkerhetsåtgärder.
+  \item To build an information security policy and other policy documents,
+  \item elect one or several persons to lead and coordinate the work with
+    information security,
+  \item classify their information with a starting point in regard to
+    confidentiality, integrity and availability,
+  \item with the help of risk analysis, provide a risk evaluation, estimation
+    and treatment, and
+  \item document important audits and security measurements.
 \end{enumerate}
-Vidare föreskrivs i 5 § att
+Further more, in 5§ that
+
 \begin{enumerate}\setcounter{enumi}{5}
-  \item ledningen ska hålla sig informerad om arbetet och minst en gång per år 
-    följa upp och utvärdera informationssäkerhetsarbetet.
+  \item the management should keep itself up to date with the work with
+    information security, and at least once a year do a follow-up and evaluate
+    the information security work.
 \end{enumerate}
 
-Reflektera kortfattat punkterna 1, 2 och 3 \emph{samt} en av punkterna 4, 
-5 eller 6.
-Skriv ner varför du tycker att respektive krav är viktiga alternativt mindre 
-viktiga att genomföra i en organisation.
-Observera att din tänkta organisation ej behöver vara statlig myndighet.
-Du skriver maximalt 150 ord för respektive punkt.
+Shortly reflect around the key points 1, 2 and 3, \emph{then} select one of the key
+points 4, 5 or 6.
 
-\subsection{Framgångsfaktorer}
+If you are using the English course material, refer to the key-points a-i in
+\cite[chap. 3.2.1]{iso27000}
 
-Att implementera ett ledningssystem i en verksamhet är ett omfattande arbete.
-I metodstödet framkommer vissa framgångsfaktorer för att lyckas.
-Förklara dessa kortfattat om maximalt 150 ord totalt.
+Write down why you think each of the requirement is important, or not as
+important to incorporate in an organisation.
 
-\subsection{En engagerad ledning}
+Note that the organisation does not necessarily need to be a governmental
+agency.
 
-Vilka argument skulle du använda för att motivera en ledning till att fatta 
-beslut om att implementera ett LIS\@?
-Skriv ner minst tre argument och motivera varför.
-Dessa bör omfatta maximalt 150 ord totalt.
+\subsection{Success factors}
 
+To implement an \acp{isms} in an organisation is a large project. Therefore
+the material mentions some success factors that are critical to achieve a
+successful implementation \cite[3.6]{iso27000}. Give a short summary about
+these success factors.
+
+\subsection{Commitment from the Management}
+If you where put in the position to try to convince the management in a company
+to implement a \acp{isms}. How would you motivate them?
 
 \section{Examination}
 \label{sec:examination}
 
-Denna uppgift kommer att examineras genom ett skriftligt PM som lämnas in som 
-ett PDF-dokument.
-Detta ska innehålla uppgifterna från \cref{Work}:
-\begin{enumerate}
-  \item Ledningssystem och Ledningssystem för informationssäkerhet (350 ord);
-    \begin{solution}
-      Betyg: F-C.
+This assignment will be examinated through a written PM that will be handed in
+as a PDF-document.
+The PM \emph{must} must cover the tasks from \cref{Work}:
 
-      Ledningssystemet beskrivs i \emph{Introduktion till 
-        metodstödet}~\cite{MSB2011itm}, med början i avsnitt 1.2 
-      \enquote{Ledningssystem för informationssäkerhet}.
-      Bilaga A i samma dokument förklarar också LIS på ett bra sätt.
-      Ett ledningssystem är kort:
+\begin{enumerate}
+  \item Information Security Management System;
+    \begin{solution}
+      Grade: F-C.
+      \acp{isms} is described in \emph{Introduktion till 
+        metodstödet}~\cite{MSB2011itm} or \cite[chap. 3]{iso27000},
+
+      A management system can briefly be defined as:
       \begin{itemize}
-        \item Ett \enquote{system} för att leda verksamheten.
-        \item Andra exempel: kvalitetsledningssystem, miljöledningssystem.
+        \item A \enquote{system} to manage the organization.
+        \item Other example: Quality Management system, Environmental Management.
       \end{itemize}
 
-      Ett ledningssystem för informationssäkerhet är ett specialfall av 
-      ledningssystem, i korthet:
+      A \acp{isms} is a special case of a management system that cen briefly be
+      explained as:
       \begin{itemize}
-        \item Ett LIS styr verksamhetens informationssäkerhet.
-          Förklarar också \emph{hur} man arbetar för att hålla ordning på 
-          informationssäkerheten.
-        \item Integreras med övrigt ledningssystem.
-        \item Finns internationella standarder för detta: ISO 27000-serien.
-        \item Metodstödet beskriver hur man bygger upp ett LIS som en PDCA-cykel 
-          (förbättringscykel) -- strävar mot ständiga förbättringar.
-        \item Ett LIS ska anpassas till verksamhetens behov -- metodstödet ska 
-          ses som ett smörgåsbord.
-        \item Förordningen MSBFS 2009:10~\cite{MSBFS2009:10} beskriver 
-          skall-kraven för myndigheters LIS\@.
+        \item An \acp{isms} is controlling the organizations information
+          security. It also explains \emph{how} to work to manage the
+          information security.
+
+        \item Integrated with other management systems.
+        \item There is an international standard for this: ISO 27000-series.
+        \item MSBs 'Metodstöd' gives a description how to build a \acp{isms} as
+          an PDCA life cycle.
+        \item An \acp{isms} should be adapted to the organizations need. MSB's
+          'metodstöd' should be seen as a smorgasbord.
+        \item The regulation MSBFS 2009:10~\cite{MSBFS2009:10} list what
+          governmental agencies must implement, in regards to \acp{isms}.
       \end{itemize}
     \end{solution}
 
-  \item Krav enligt MSBFS 2009:10, punkterna 1--3 samt en av punkterna 4--6 (600 
-    ord);
+  \item Requirements according to MSBFS 2009:10, points 1--3 and one of the
+    following key points 4--6. Or if you are using the english material,
+    keypoints a-c and one the points d-i in \cite[chap. 3.2.1]{iso27000}.
     \begin{solution}
-      Betyg: F eller P.
+      Grade: F or P.
 
       Se MSBFS 2009:10~\cite{MSBFS2009:10}.
     \end{solution}
 
-  \item Framgångsfaktorer (150 ord); samt
+  \item Success factors; and
     \begin{solution}
-      Betyg: F-C.
+      Grade: F-C.
 
-      Beskrivs i \emph{Introduktion till metodstödet}~\cite{MSB2011itm}, avsnitt 
-      2 \emph{Framgångsfaktorer}.
+      Described in \emph{Introduktion till metodstödet}~\cite{MSB2011itm}, avsnitt 
+      2 \emph{Framgångsfaktorer}, or \cite[3.6]{iso27000}
+      Success factors that needs to be mentioned are
       De framgångsfaktorer som ska beskrivas är
       \begin{itemize}
-        \item ledningens engagemang,
-        \item förankring i och kunskap om organisationen,
-        \item tillräckliga resurser, och
-        \item verksamhetsanpassning.
+        \item Commitment from the management,
+        \item Support through the entire organization,
+        \item sufficient resources, and
+        \item adapting the \acp{isms} to the organization.
       \end{itemize}
-
-      De ska förklara något från alla delar för att få full pott.
-      (Det är nog lättast om du själv läser och får en uppfattning om hur de 
-      ska beskriva framgångsfaktorerna -- ganska lite text så det är svårt att 
-      sammanfatta i punktform.)
-      Dra av ett betygssteg för varje faktor som är otillräcklig.
     \end{solution}
 
-  \item En engagerad ledning (150 ord).
+  \item Commitment from the Management
     \begin{solution}
-      Betyg: F eller P.
-
-      Betyg ska inte baseras på om de anger MSB:s förslag eller ej.
-      Värdera hur de resonerar kring antingen MSB:s eller deras egna förslag.
-      Om de väljer att använda sig av MSB:s förslag hittas de i \emph{Säkra 
-        ledningens engagemang}~\cite{MSB2011sle}, avsnitt 3.2 \emph{Argument 
-        för att införa ett LIS i organisationen}.
+      Grade: F eller P.
+      
+      Grading is not done solely on the student naming the suggestion given in
+      the course literature, instead, it should be based on their own
+      reflections.
     \end{solution}
 \end{enumerate}
 
-Totalt ska ditt PM omfatta mellan 1000--1250 ord, vara skrivet med akademisk 
-svenska eller engelska och ha korrekta referenser.
-
+Your PM should be written with an academic language in either english or
+swedish. It must contain correct references.
 
 \printbibliography{}
 \end{document}
