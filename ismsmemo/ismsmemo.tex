@@ -1,4 +1,3 @@
-% $Id$
 \documentclass[a4paper]{llncs}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish]{babel}
@@ -6,7 +5,7 @@
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
 \usepackage[swedish]{cleveref}
-\usepackage{acro}
+\usepackage[single]{acro}
 \usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
 \addbibresource{ismsmemo.bib}
 
@@ -18,7 +17,9 @@
 \DeclareAcronym{isms}
 {
   short = ISMS,
-  long = Information Security Management Systems,
+  short-indefinite = an,
+  long = information security management system,
+  long-indefinite = an,
 }
 
 % XXX translate to english, add enisa literature
@@ -40,7 +41,7 @@
 \section{Introduction}
 \label{sec:introduction}
 
-This assignments focus on \acp{isms}. The purpose of an \acp{isms} is to manage
+This assignments focus on \acp{isms}. The purpose of \iac{isms} is to manage
 an organizations work within the field of information security.
 
 \section{Aim}
@@ -64,13 +65,13 @@ This assignment contains four sub tasks, One introduction task covering
 committed leadership.
 
 \subsection{Information Security Management System}
-Shortly describe a management system is, and more specifically what an
-\acp{isms} is. Your description should also cover how an \acp{isms} is
+Shortly describe a management system is, and more specifically what \iac{isms} 
+is. Your description should also cover how \iac{isms} is
 structured.
 
 \subsection{Legal requirements according to MSBFS 2009:10}
 
-In an \acp{isms}, there are certain work tasks defined for the organisation.
+In \iac{isms}, there are certain work tasks defined for the organisation.
 The Swedish Civil Contingencies Agency (MSB) have defined in their statutes
 MSBFS 2009:10~\cite{MSBFS2009:10}, which is binding for governmental agencies, 
 stated that the governmental agencies should:
@@ -106,14 +107,14 @@ agency.
 
 \subsection{Success factors}
 
-To implement an \acp{isms} in an organisation is a large project. Therefore
+To implement \iac{isms} in an organisation is a large project. Therefore
 the material mentions some success factors that are critical to achieve a
 successful implementation \cite[3.6]{iso27000}. Give a short summary about
 these success factors.
 
 \subsection{Commitment from the Management}
 If you where put in the position to try to convince the management in a company
-to implement a \acp{isms}. How would you motivate them?
+to implement a \iac{isms}. How would you motivate them?
 
 \section{Examination}
 \label{sec:examination}
@@ -135,19 +136,19 @@ The PM \emph{must} must cover the tasks from \cref{Work}:
         \item Other example: Quality Management system, Environmental Management.
       \end{itemize}
 
-      A \acp{isms} is a special case of a management system that cen briefly be
+      \Iac{isms} is a special case of a management system that cen briefly be
       explained as:
       \begin{itemize}
-        \item An \acp{isms} is controlling the organizations information
+        \item \Iac{isms} is controlling the organizations information
           security. It also explains \emph{how} to work to manage the
           information security.
 
         \item Integrated with other management systems.
         \item There is an international standard for this: ISO 27000-series.
-        \item MSBs 'Metodstöd' gives a description how to build a \acp{isms} as
+        \item MSBs 'Metodstöd' gives a description how to build \iac{isms} as
           an PDCA life cycle.
-        \item An \acp{isms} should be adapted to the organizations need. MSB's
-          'metodstöd' should be seen as a smorgasbord.
+        \item \Iac{isms} should be adapted to the organizations need. MSB's
+          \enquote{metodstöd} should be seen as a smorgasbord.
         \item The regulation MSBFS 2009:10~\cite{MSBFS2009:10} list what
           governmental agencies must implement, in regards to \acp{isms}.
       \end{itemize}
@@ -174,7 +175,7 @@ The PM \emph{must} must cover the tasks from \cref{Work}:
         \item Commitment from the management,
         \item Support through the entire organization,
         \item sufficient resources, and
-        \item adapting the \acp{isms} to the organization.
+        \item adapting the \ac{isms} to the organization.
       \end{itemize}
     \end{solution}
 
