@@ -3,14 +3,21 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english,swedish]{babel}
+\usepackage[swedish,english]{babel}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{subfig}
 \usepackage{csquotes}
+\usepackage{acro}
 \usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
 \addbibresource{msbintro.bib}
+\DeclareAcronym{isms}
+{
+  short = ISMS,
+  long = Information Security Management Systems,
+}
+
 \setbeamertemplate{bibliography item}[text]
 
 \mode<presentation>{%
@@ -21,21 +28,21 @@
 \setbeamertemplate{footline}{\insertframenumber}
 
 \title[Intro MSB]{%
-  Introduktion till\\
-  MSB:s metodstöd
+  Introduction to\\
+  Swedish Civil Contingencies Agency (MSB) support for introducing \acp{isms}.
 }
-\author{Carina Bengtsson och Daniel Bosk\footnote{%
+\author{Carina Bengtsson, Daniel Bosk and Lennart Franked\footnote{%
   Detta verk är tillgängliggjort under licensen Creative Commons 
   Erkännande-DelaLika 2.5 Sverige (CC BY-SA 2.5 SE).
 	För att se en sammanfattning och kopia av licenstexten besök URL 
 	\url{http://creativecommons.org/licenses/by-sa/2.5/se/}.
 }}
-\institute[MIUN ITM]{%
-  %Department of Information and Communication Systems (ICS),\\
-  %Mid Sweden University, Sundsvall.
-	%
-  Avdelningen för informations- och kommunikationssytem (IKS),\\
-  Mittuniversitetet, Sundsvall.
+\institute[MIUN IST]{%
+  Department of Informationsystem and Technologies (IST),\\
+  Mid Sweden University, Sundsvall.
+	
+  %Avdelningen för informations- och kommunikationssytem (IKS),\\
+  %Mittuniversitetet, Sundsvall.
 }
 \date{\today}
 
@@ -43,7 +50,7 @@
 %\logo{\pgfuseimage{university-logo}}
 
 \AtBeginSection[]{%
-	\begin{frame}<beamer>{Översikt}
+	\begin{frame}<beamer>{Overview}
 		\tableofcontents[currentsection]
 	\end{frame}
 }
@@ -54,7 +61,7 @@
   \titlepage{}
 \end{frame}
 
-\begin{frame}{Översikt}
+\begin{frame}{Overview}
 	\tableofcontents
 	% You might wish to add the option [pausesections]
 \end{frame}
@@ -71,16 +78,17 @@
 %   15 and 30 frames, all told.
 
 
-\section[Metodstöd]{MSB:s metodstöd}
+\section[Methodilogical support]{MSB:s methodological support}
 
 \subsection{MSB}
 
 \begin{frame}{MSB}
   \begin{itemize}
-    \item Myndigheten för samhällsskydd och beredskap.
-    \item \enquote{MSB utvecklar, tillsammans med andra, individens och 
-        samhällets förmåga att förebygga, hantera och lära av olyckor och 
-        kriser.}
+    \item Swedish Civil Contingencies Agency (MSB).
+    \item \enquote{MSB is responsible for issues concerning civil protection,
+        public safety, emergency management and civil defence, as long as no
+        other authority has responsibility\cite[About MSB]{msbse}.
+        .}
   \end{itemize}
 \end{frame}
 
@@ -91,209 +99,223 @@
 %  \end{figure}
 %\end{frame}
 
-\begin{frame}{Varför behöver samhället detta?}
+\begin{frame}{Why do we as a society need this?}
   \begin{itemize}
-    \item Information är centralt i dagens samhälle.
-    \item Tillgodoser behov för både individ och samhälle.
-    \item Behöver undvika störningar av våra informationssystem.
+    \item Information is central in today's society.
+    \item Accommodates the need for both the individual and the society.
+    \item Necessary to avoid disturbances in our information systems.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Tietohaveriet}
-  \citet{Lindkvist2012tdf} ger följande sammanfattning:
+\begin{frame}[allowframebreaks]{Tieto-breakdown}
+  \citet{Lindkvist2012tdf} gives the following summary:
   \begin{description}
-    \item[Fredag e.m.] Tieto uppmärksammar en driftstörning.
-      350 Apoteket-butiker tappar kontakt med sina IT-system.
-      Många andra större organisationer drabbas också, bland andra ett större 
-      logistikföretag.
+    \item[Friday afternoon] Tieto notices a disruption in their IT-systems.
+      350 pharmacies lost contact with their IT-systems.
+      Many larger organisations are also affected, amongst other a larger
+      logistical company.
 
-    \item[Söndag e.m.] Tieto rapporterar maskinvarufel och påbörjar åtgärder.
+    \item[Sunday afternoon] Tieto is reporting hardware malfunction, and start
+     the necessary steps to fix the malfunction.
 
-    \item[Måndag f.m.] Logistikföretag kan inte sköta sin verksamhet och inte 
-      nå sina anställda.
-      Bilprovningen har totalstopp i IT-systemet -- dessa hanterar 20\,000 
-      fordon om dagen -- resulterar i körförbud då Transportstyrelsen ej får in 
-      godkända kontrollbesiktningar.
-      Nacka kommun övergår till Facebook och Twitter för kommunikation.
+    \item[Monday morning] The logistical company are unable to handle its
+      operation, and cannot reach its employees.
+      The vehicle inspection agency are unable to access their IT-system. Since
+      they were handling over 20\, 000 vehicle inspections a day, it might
+      result to a driving ban for some vehicles, since they cannot report
+      approved inspections.
+      Nacka municipality, have to resort to Facebook and Twitter for
+      communicating within the municipality.
 
-    \item[Måndag e.m.] Socialkontoren i Nacka och Sollentuna kan ej betala ut 
-      försörjningsstöd.
-      Stockholm stads frånvarorapporteringssytem för skolorna ligger nere.
+    \item[Monday afternoon] Social office in Nacka and Sollentuna are unable to
+      pay child support.
+      Stockholm City absence reporting system for the schools are down.
 
-    \item[Onsdag lunch] Samtliga Apotek har fått tillbaka sina IT-system.
+    \item[Wednesday lunch] All the pharmacies have gotten access to their
+      IT-systems again.
 
-    \item[11 dagar] Logistikföretaget får tillbaka sitt IT-system.
-      Verksamheten är fortfarande inte återställd två månader efter haveritet.
-
+    \item[11 days] The logistical company can start using their IT-system.
+      The organisation where still recovering from the disruption, two months
+      after.
   \end{description}
 \end{frame}
 
-\subsection{Metodstödet}
+\subsection{Methodological support}
 
 \begin{frame}{Informationssäkerhet.se}
   \begin{itemize}
-    \item MSB drev projektet SVISA\@: Stöd för Verksamheters 
-      InformationsSäkerhetsArbete.
+    \item MSB ran a project called SVISA\@: 'Stöd för Verksamheters 
+      InformationsSäkerhetsArbete'.
 
-    \item Resulterade i \url{informationssäkerhet.se}.
+    \item Resulted in \url{informationssäkerhet.se}.
 
-    \item Ska ge praktiskt stöd för systematiskt informationssäkerhetsarbete.
-
+    \item Is meant to give practical advice for systematically incorporate
+      information security into an organisation.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Metodstödet}
+\begin{frame}{Methodological support}
   \begin{itemize}
-    \item Stöd för att bedriva informationssäkerhetsarbete i en organisation.
+    \item Support for how to conduct work within information security in an
+      organisation.
 
-    \item Förklarar hur man bygger ett ledningssystem för informationssäkerhet.
+    \item Explains how to build an information security management system.
 
-    \item Bör ses som ett \enquote{smörgåsbord}:
+    \item Should be seen as a \enquote{smorgasbord}:
       \begin{itemize}
-        \item Ta de delar som är aktuella för verksamheten.
-        \item Tillämpa dem i den ordning som är lämpligt.
+        \item Pick the parts that are related to the organisation.
+        \item Apply them in an order that is suitable.
       \end{itemize}
 
-    \item Informationssäkerhet är komplext:
+    \item Information security is a complex field:
       \begin{itemize}
-        \item Krävs att den integreras i \emph{hela} organisationen: allt från 
-          högsta ledningsnivå till lägsta operativa nivån.
+        \item It is required that it is integrated in the \emph{entire}
+          organisation: From the top management to the lowest operative level.
       \end{itemize}
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Metodstödet}
+\begin{frame}{Methodological overview}
   \begin{figure}
     \includegraphics[width=\textwidth]{metodstod-overview.png}
-    \caption{Översikt av metodstödet.}
+    \caption{Overview over the methodological support.}
   \end{figure}
 \end{frame}
 
+\section{Prepare}
 
-\section{Förbereda}
+\subsection{Introduction}
 
-\subsection{Introduktion}
-
-\begin{frame}{Vad är informationssäkerhet?}
+\begin{frame}{What is information security?}
   \begin{itemize}
-    \item Uppstår tillsammans med andra processer och verksamheter.
+    \item Occurs together with other processes and organisations.
 
-    \item Informationssäkerheten i en verksamhet har inget egenvärde måste 
-      integreras för att kunna skydda verksamheten.
+    \item Information security in an organisation does not have a value by
+      itself. It needs to be integrated into the organisation to be effective.
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Vad är informationssäkerhet?}
+\begin{frame}{What is information security?}
   \begin{itemize}
-    \item Förmågan att bevara de krav och förväntningar som finns på 
-      informationen i verksamheten.
+    \item Ability to preserve the requirements and expectations that exist on
+      information in an organisation.
 
-    \item Bland annat att skydda från haverier likt Tieto---om det finns sådana 
-      krav!
+    \item Amongst other to protect towards disruptions, such as what happened to
+      Tieto.
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Krav och förväntningar på informationen}
+\begin{frame}{Demands and expectations on information}
   \begin{description}
-    \item[Konfidentialitet] Informationen ska endast vara tillgänglig för 
-      behörig.
+    \item[Confidentiality] The information should only be accessible to an
+      authorized entity.
 
-    \item[Tillgänglighet] Informationen är användbar och finns till hands när 
-      den behövs.
+    \item[Availability] The information must be accessible when it is needed.
 
-    \item[Riktighet] Informationen är exakt och fullständig.
+    \item[Integrity] The information is exact and complete.
 
   \end{description}
 \end{frame}
 
-\begin{frame}{Krav och förväntningar på informationen}
+\begin{frame}{Demands and expectations on information}
   \begin{description}
-    \item[Spårbarhet] Vem har tagit del av eller förändrat information?
-    \item[Oavvislighet] Det ska inte gå att förneka en handling.
-    \item[Autentisering] Fastställa en entitets identitet.
-    \item[Auktorisation] Att ge en autentiserad entitet vissa rättigheter.
+    \item[Traceability] Who have taken part of, or changed the information?
+    \item[Non Repudiation] It should not be possible to deny an act.
+    \item[Authentication] Establish an entities identity.
+    \item[Authorization] To give an authenticated entity certain permissions.
   \end{description}
-  Återkommer till dessa senare i kursen.
+  These will be covered later in the course.
 \end{frame}
 
-\begin{frame}{Vad är informationssäkerhet?}
+\begin{frame}{What is information security?}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{infosak-struktur.png}
-    \caption{Informationssäkerhetens struktur.}
+    \caption{Structure of information security.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Struktur}
+\begin{frame}{Structure}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{infosak-process.png}
-    \caption{Att arbeta med informationssäkerhet.}
+    \caption{To work with information security}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Säkerheten är inte starkare än den svagaste länken}
+\begin{frame}{The security isn't stronger than the weakest link}
   \begin{itemize}
-    \item Svårgissat lösenord på post-it bredvid datorn.
-    \item Oknäckbart kodlås på glasdörr.
-    \item Det måste finnas förutsättningar för att arbeta säkert.
+    \item Strong password, written down on a post-it next to where it should be
+      used.
+    \item High grade lock on a regular glass door.
+    \item The conditions must be there, in order to be able to work safely.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Varför skydda information?}{Frivilligt}
-  Bra för verksamhetens
+\begin{frame}{Why protect the information?}{Non-mandatory}
+  \enquote{Good for business}
   \begin{description}
-    \item[rykte:] vem låter ett företag hantera ens information om de är kända 
-      för att göra det vårdslöst;
+    \item[Reputation:] Who will let a company handle their information, if the
+      company is known for treating their data carelessly.
 
-    \item[ekonomi:] gott rykte är bättre för ekonomin och kostnader för 
-      säkerhetsincidenter minskar;
+    \item[Financial:] Strong reputation is better for the economy, and the cost
+      of dealing with security incidents will be less.
 
-    \item[intern effektivitet:] inga förluster av information eller uppehåll 
-      i arbetet, jämför med Tietohaveriet;
+    \item[Internal efficiency:] No loss of information or disruptions in the
+      work.
 
-    \item[kvalitet:] följd blir att kvalietet på arbetet man utför ökar.
+    \item[Quality:] This will hopefully lead to a increase in work quality.
 
   \end{description}
 \end{frame}
 
-\begin{frame}{Varför skydda information?}{Obligatoriskt}
+\begin{frame}{Why protect the information?}{Mandatory}
   \begin{description}
-    \item[PUL 1998:204] säger att personuppgifter inte får hanteras och lämna 
-      en verksamhet hur som helst;
+    \item[Personal Data Act 1998:204] adds restrictions on how an organisation manages
+      personal data.
 
-    \item[Offentlighets- och sekretesslagen 2009:40] säger att viss information 
-      \emph{ska} finnas tillgänglig för allmänheten medan annan information 
-      \emph{inte} ska det.
+    \item[Public Access to Information and Secrecy Act 2009:40] Says that certain
+      information \emph{must} be available for the public, while other information
+      should \emph{not} be.
 
-    \item[Arkivlagen 1990:782] säger att myndigheter måste arkivera alla 
-      allmänna handlingar.
+    \item[The Archives Act 1990:782] says that the government needs to archive
+      all public documents.
 
-    \item[MSBFS 2009:10] gäller myndigheters arbete med informationssäkerhet.
+    \item[MSBFS 2016:1] applies to governmental agency and their
+      work with information security.
 
   \end{description}
 \end{frame}
 
-\begin{frame}{MSBFS 2009:10}
+\begin{frame}{MSBFS 2016:1}
   \begin{itemize}
-    \item På grund av ökat elektroniskt informationsutbyte i samhället ställs 
-      nu krav på myndigheters informationssäkerhetsarbete.
+    \item Due to increased electronic information exchange in the society, there
+      is now demands put on how governmental agency work with information
+      security.
 
-    \item Författningen trädde i kraft 1 februari 2010.
+    \item The code of statutes came into effect 1th of February 2010.
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{MSBFS 2009:10}
-  1 §   Denna författning innehåller bestämmelser om myndigheternas arbete med 
-  informationssäkerhet och deras tillämpning av standarder i sådant arbete.
+\begin{frame}{MSBFS 2016:1}
+  1 §  Denna författning innehåller föreskrifter som ansluter till
+  bestämmelserna om statliga myndigheters informationssäkerhet i 19§
+  förordningen (2015:1052) om krisberedskap och bevakningsansvariga
+  myndigheters åtgärder vid höjd beredskap. 
+
 \end{frame}
 
-\begin{frame}{MSBFS 2009:10}
-  4 §   En myndighet ska i sitt arbete med att upprätthålla säkerhet i sin 
-  informationshantering tillämpa ett ledningssystem för informationssäkerhet.
-  Det innebär att myndigheten ska
+\begin{frame}{MSBFS 2016:1}
+  5 §  Varje myndighet ska bedriva ett systematiskt och riskbaserat
+  informationssäkerhetsarbete med stöd av ett ledningssystem för
+  informationssäkerhet. I detta arbete ska standarderna ISO/IEC 27001:2014 och
+  ISO/IEC 27002:2014 beaktas. Tillräckliga resurser ska tilldelas för
+  informationssäkerhetsarbetet samt löpande och regelbunden information lämnas
+  till myndighetsledningen.
+  
+  Detta innebär bland annat att en myndighet måste: 
   \begin{enumerate}
     \item upprätta en informationssäkerhetspolicy och andra styrande dokument 
       som behövs för myndighetens informationssäkerhet,
@@ -304,26 +326,18 @@
     \item utifrån risk- och sårbarhetsanalyser och inträffade incidenter 
       avgöra hur risker ska hanteras, samt besl uta om åtgärder för 
       myndighetens informationssäkerhet,
-    \item dokumentera granskningar och säkerh etsåtgärder av större betydelse 
+    \item dokumentera granskningar och säkerhetsåtgärder av större betydelse 
       som har vidtagits.
+    \item 
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{MSBFS 2009:10}
-  5 §   Myndighetens ledning ska löpande informera sig om arbetet med 
-  informationssäkerhet samt minst en gång per år följa upp och utvärdera 
-  informationssäkerhetsarbetet på myndigheten.
-\end{frame}
-
-\begin{frame}{MSBFS 2009:10}
-  6 §   En myndighets arbete enligt 4 och 5 §§ ska bedrivas i former enligt 
-  följande etablerade svenska standarder för informationssäkerhet;
-  \begin{itemize}
-    \item Ledningssystem för informationssäkerhet -- Krav (SS-ISO/IEC 
-      27001:2006 fastställd 2006-01-19), och
-    \item Riktlinjer för styrning av informationssäkerhet (SS-ISO/IEC 
-      27002:2005 fastställd 2005-08-12).
-  \end{itemize}
+\begin{frame}{MSBFS 2016:1}
+  10 § Myndigheten ska ha rutiner för att identifiera, rapportera, bedöma,
+  hantera och dokumentera incidenter som kan påverka säkerheten i den
+  informationshantering som myndigheten ansvarar för eller i tjänster som
+  myndigheten tillhandahåller åt en annan organisation. Myndigheten ska ha
+  rutiner för att lära av sådana inträffade incidenter och utförda åtgärder. 
 \end{frame}
 
 \begin{frame}{ISO 27000}
@@ -339,529 +353,536 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Ledningssystem}
+\begin{frame}{Management System}
   \begin{itemize}
-    \item Alla har ett \enquote{system} för att leda verksamheten.
+    \item Everyone have a \enquote{system} to manage an organisation.
   \end{itemize}
-  \begin{quote}
-    \blockcquote{lis}[.]{Ett formaliserat system som används för att göra 
-      arbetet mer effektivt med avseende på uppställda mål.
-    Det ska innehålla rutiner och ansvarsfördelningar i hur verksamheten leds 
-    och bedrivs, finnas uppsatta mål och riktlinjer för hur de ska uppnås}
-  \end{quote}
+      A formalized system that is used to make the work more efficient in
+      regards to set goals. It should include routines and delegation of
+      responsibilities for how the organisation should be managed. It must exist
+      clear goals and guidelines for how they should be achieved.
   \begin{itemize}
-    \item Omfattar exempelvis organisationsstruktur, styrdokument, \dots
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Ledningssystem för informationssäkerhet (LIS)}
-  \begin{itemize}
-    \item Bör integreras med övriga ledningssystemet!
-    \item Syftar till att ordna informationssäkerhetsarbetet.
-    \item Även hur man håller ordning: exempelvis arbetssätt, metoder.
-    \item Styrdokument har en viktig roll i ett LIS\@.
+    \item Covers amongst other, organisational structures, governance documents
+      etc.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Tillämpa LIS}
-  Inte bara upprätta, utan även
+\begin{frame}{Information Security Management System (ISMS)}
   \begin{itemize}
-    \item införa,
-    \item driva,
-    \item övervaka,
-    \item granska,
-    \item underhålla och förbättra
-  \end{itemize}
-  LIS inom ramen för verksamheten och riskerna.
-\end{frame}
-
-\begin{frame}{Styrdokument}
-  \begin{itemize}
-    \item Handlingsplaner, policyer, riktlinjer, \dots
-
-    \item Policy: vad vill vi uppnå?
-      En stor eller många små.
-
-    \item I övrigt bör styrdokumenten integreras i verksamhetens nuvarande 
-      struktur.
-
+    \item Should be integrated with the other management systems!
+    \item Refers to how to regulate the work with information security.
+    \item Also how to regulate work routines, methods \dots
+    \item Governance documents have an important role to play in \acp{isms}\@.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Informationssäkerhet på olika nivåer}
+\begin{frame}{Apply \acp{isms}}
+  Not only establish, but also
+  \begin{itemize}
+    \item implement,
+    \item pursue,
+    \item monitor,
+    \item audit,
+    \item maintain and improve
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Governance documents}
+  \begin{itemize}
+    \item Plan of action, policies, guidelines, \dots
+
+    \item Policy: What do we want to achieve?
+      One extensive, or multiple smaller ones.
+
+    \item The governance documents should be integrated into the organisations
+      current structure.
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Information security in different levels}
   \begin{figure}
     \includegraphics[width=\textwidth]{infosak-levels.png}
-    \caption{De olika nivåerna där informationssäkerhetsarbete kan bedrivas.}
+    \caption{Different levels where information security can be conducted.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Syftet med LIS}
+\begin{frame}{Purpose with \acp{isms}}
   \begin{figure}
     \includegraphics[width=\textwidth]{infosak-pdca.png}
-    \caption{Att omvandla krav till aktivt skydd.}
+    \caption{To convert requirements to an active protection.}
   \end{figure}
 \end{frame}
 
 \begin{frame}{ISO 27001}
   \begin{itemize}
-    \item Metodstödet beskriver hur man bygger upp ett LIS utifrån kraven i ISO 
-      27001.
+    \item MSB's methodological support, describes how to build an \acp{isms},
+      based on ISO 27001.
 
-    \item ISO 27001 är en ständigt pågående systematisk process som strävar mot 
-      ständiga förbättringar av arbetssätt och säkerhetslösningar 
-      i informationssäkerhetsarbetet.
+    \item ISO 27001 is a continuous process that strives towards constant
+      improvements on how to work and use different security solutions in
+      regards to information security.
 
-    \item Det är viktigt att anpassa detta efter den egna verksamheten -- men 
-      det innebär inte att man kan hoppa över delar efter eget godtycke.
+    \item It is important to adapt this after the organisation, but this does
+      not mean that parts can be skipped.
 
   \end{itemize}
 \end{frame}
 
 \begin{frame}{PDCA}
   \begin{description}
-    \item[Plan] Förbereda, analysera, utforma.
-    \item[Do] Införa.
-    \item[Check] Följa upp.
-    \item[Act] Förbättra.
+    \item[Plan] Plan, analyze and design.
+    \item[Do] Establish.
+    \item[Check] Follow up.
+    \item[Act] Improve.
   \end{description}
-  Därefter åter till steget analysera.
+  Then start over again.
 \end{frame}
 
-\begin{frame}{ISO 27002 -- vad ska göras?}
+\begin{frame}{ISO 27002 -- What should be done?}
   \begin{itemize}
-    \item Säkerhetspolicy.
-    \item Organisation av informationssäkerheten.
-    \item Hantering av tillgångar.
-    \item Personalresurser och säkerhet.
-    \item Fysisk och miljörelaterad säkerhet.
-    \item Styrning av kommunikation och drift.
-    \item Styrning av åtkomst.
-    \item Anskaffning, utveckling och underhåll av informationssystem.
-    \item Hantering av informationssäkerhetsincidenter.
-    \item Kontinuitetsplanering för verksamheten.
-    \item Efterlevnad.
+    \item Security Policy.
+    \item Organising the information security.
+    \item Managing assets.
+    \item Human resource and security.
+    \item Physical and environmental security.
+    \item Control communication and management.
+    \item Access control.
+    \item Acquisition, development and maintenance of information systems.
+    \item Managing information security incidents.
+    \item Continuity planning for the organisations.
+    \item Compliance.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002 -- vad ska göras?}
-  Allt detta täcks av olika kapitel i ISO 27002, dessa återkommer vi till under 
-  nästa föreläsning.
+\begin{frame}{ISO 27002 -- What should be done?}
+  All of this is covered in different chapters in ISO 27002. We will cover parts
+  of this during the next lecture.
 \end{frame}
 
-\subsection{Ledningens engagemang}
+\subsection{Committed Management}
 
-\begin{frame}{Ledningens engagemang}
+\begin{frame}{Committed management}
   \begin{itemize}
-    \item Hur lyckas man?
-      Det krävs stöd från ledningen.
+    \item How to succeed?
+      Support is needed from the top management.
 
-    \item Då informationssäkerhetsarbetet ska genomsyra hela organisationen 
-      måste ledningen vara engagerad.
+    \item Since the work with information security should cover the entire
+      organisation, it is vital that the top management is fully committed.
 
-    \item De som driver arbetet måste få mandat att utföra det.
+    \item Those that have been appointed to work with information security,
+      needs to have the mandate to be able to do their work.
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Skapa engagemang}
+\begin{frame}{Create commitment}
   \begin{itemize}
-    \item Ledningen har det övergripande ansvaret för organisationen---detta 
-      innefattar informationssäkerheten och säkerhetsincidenter.
-
-    \item Få ledningen att förstå vikten av informationssäkerhet.
+    \item The top management have the overall responsibility for the
+      organisation -- This involves information security and security incidents.
+      
+    \item Important to make the management understand the importance of
+      information security.
 
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Motivation}
   \begin{itemize}
-    \item Vilka positiva effekter följer av god informationssäkerhet?
+    \item What positive effects might come with strong information security?
 
-    \item Vad kan det kosta att inte skydda informationen?
+    \item What is the price of \emph{not} protecting the information?
       \begin{itemize}
-        \item Företagshemligheter som läcker.
-        \item Infrastruktur som är otillgänglig under längre tid.
+        \item Leaked company secrets.
+        \item Inaccessible infrastructure.
       \end{itemize}
 
-    \item Visa incidenter.
+    \item Show incidents.
 
-    \item Lagar och andra regleringar?
+    \item Laws and other regulations?
 
   \end{itemize}
 \end{frame}
 
-\subsection{Projektplanering}
+\subsection{Project planning}
 
-\begin{frame}{Projektplanering}
+\begin{frame}{Project planning}
   \begin{itemize}
-    \item Metodstödet rekommenderar att ett LIS etableras i projektform \dots
-    \item \dots för att sedan övergå till en process.
+    \item MSB recommends that an \acp{isms} should start in project form and
+      then go over to become a process.
   \end{itemize}
   \begin{figure}
     \includegraphics[height=0.5\textheight]{lis.png}
-    \caption{Införande och genomförande av LIS.}
+    \caption{Establish and implement an \acp{isms}.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Projektplan}
+\begin{frame}{Project plan}
   \begin{itemize}
-    \item Utgör projektets grund.
-    \item Definierar omfattningen och gränserna för LIS\@.
-    \item Ett avtal som är bra för både projektledare och ledning.
-    \item Kan innehålla:
+    \item The foundation of the project.
+    \item Defines the extent of the \acp{isms}\@.
+    \item An agreement that is good for both the project leader and the
+      management.
+    \item Can contain:
       \begin{itemize}
-        \item Bakgrund och behov,
-        \item syftet med projektet,
-        \item mål,
-        \item omfattning och avgränsning,
-        \item kopplingar och kontaktytor,
-        \item tidsplan, och
+        \item Background and need,
+        \item purpose,
+        \item goal,
+        \item extent och demarcation,
+        \item connections and contact surfaces,
+        \item time plan, and
         \item budget.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Projektorganisation}
+\begin{frame}{Organising the project}
   \begin{itemize}
-    \item Viktigt med bredd: att representera hela organisationen.
-    \item Viktigt med rätt kompetens: projektledning och informationssäkerhet.
-    \item Viktigt med mandat!
-    \item Organisationen bör vara aktiv och engagerad för att inte kompetensen 
-      ska försvinna efter projektets slut.
+    \item Important with wide knowledge: to represent the entire organisation.
+    \item Important with the correct qualifications: leading projects, and
+      information security.
+    \item Important with mandates!
+    \item The organisation should be active and engaged, so that the competence
+      is not gone once the project is over.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{En kort checklista}
+\begin{frame}{A short checklist}
   \begin{itemize}
-    \item Har ledningen fattat beslut om att arbeta för att implementera LIS\@?
-    \item Har ledningen utsett någon som samordnar organisationens 
-      informationssäkerhet?
-    \item Har ledningen sett till att det finns en strategi för att kommunicera 
-      LIS-arbetet internt?
-    \item Har ledningen fattat beslut gällande resurser?
+    \item Have the management made a decision to implement \acp{isms}?
+    \item Have the management appointed someone to coordinate the organisations
+      work with information security?
+    \item Have the management ensured that there is a strategy to communicate
+      the work with \acp{isms} internally?
+    \item Have the management made a decision regarding the budget and
+      resources?
   \end{itemize}
 \end{frame}
 
+\section{Analyze}
 
-\section{Analysera}
+\subsection{Organisational analysis}
 
-\subsection{Verksamhetsanalys}
-
-\begin{frame}{Vad ska skyddas?}
+\begin{frame}{What should be protected?}
   \begin{itemize}
-    \item Vilka informationstillgångar har vi och hur skyddsvärda är de?
-    \item Vad menas med att skydda dem?
+    \item What information assets do we have, and are they worth protecting?
+    \item What does it mean to protect them?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Verksamhetsanalys}
+\begin{frame}{Organisational analysis}
   \begin{itemize}
-    \item Verksamhetsanalysen syftar till att identifiera 
-      informationstillgångar, samt
+    \item The purpose of the organisational analysis is to identify the
+      informational assets available, and 
 
-    \item hur skyddsvärda de är.
+    \item find how much they are worth protecting.
 
-    \item Ska leda till en strukturerad förteckning över
+    \item Should lead to a structured list over
       \begin{itemize}
-        \item vilka informationstillgångar som finns,
-        \item vilka krav och förväntningar som finns på dessa, samt
-        \item vilket värde respektive tillgång har.
+        \item what informational assets there are,
+        \item what requirements and expectations they have, and 
+        \item the worth of each asset.
       \end{itemize}
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Exempel på informationstillgångar}
+\begin{frame}{Example of informational assets}
   \begin{itemize}
-    \item Medarbetare: kvalifikationer, erfarenheter.
-    \item Data: databaser, avtal, dokumentation, prover, rutiner.
-    \item Programvarutillgångar: tillämpningsprogram, systemprogram, 
-      utvecklingsprogram.
-    \item Tjänster: data- och kommunikationssystem, försörjningssystem.
-    \item Immateriella: rykte, profil.
-    \item Fysiska: datorutrustning, flyttbar datamedia.
+    \item Employees: qualifications and experiences.
+    \item Data: databases, agreement, documentation, samples, routines.
+    \item Access to software: application software, system software, 
+      development software.
+    \item Services: data- and communication systems, supply systems.
+    \item Immaterial: reputation, profile.
+    \item Physical: computer equipment, movable media.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Uppdelning av informationstillgångar}
+\begin{frame}{Dividing informational assets}
   \begin{description}
-    \item[Primära] Avser den huvudsakliga informationen; exempelvis ritning, 
-      logg och avtal.
+    \item[Primary] Refers to the main information, such as blue prints, logs or
+      contracts.
 
-    \item[Sekundära] Avser resurser som krävs för att hantera de primära 
-      informationstillgångarna.
+    \item[Secondary] Refers to resources that are required to access the primary
+      informational assets.
 
   \end{description}
-  Vad händer när du inte längre har kvar programmet som kan läsa det 
-  proprietära slutna formatet som informationen finns lagrad i?
+  What will happen if you do not have your program that is required to read the
+  closed proprietary format that the information is stored with?
+
 \end{frame}
 
-\begin{frame}{Hitta informationstillgångarna}
+\begin{frame}{Finding the informational assets}
   \begin{itemize}
-    \item Tidigare kartläggningar?
-    \item Avdelningsvis?
+    \item Previous process mappings?
+    \item Department wise?
     \item IT-system?
-    \item Projekt?
-    \item Processer?
-    \item Funktionsvis?
+    \item Project?
+    \item Processes?
+    \item By function?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Krav på informationstillgångarna}
+\begin{frame}{Requirements on the informational assets}
   \begin{itemize}
-    \item För att kunna klassificera behövs kraven kännas till.
+    \item In order to be able to classify, the requirements needs to be known.
 
-    \item Behöver objektivt sätt att mäta vikten av skydd.
+    \item Necessary to be able to objectively measure the need for protection.
       \begin{itemize}
-        \item Min information är viktigast!
+        \item My information is the most important!
       \end{itemize}
 
-    \item Vilken information är viktig för att verksamheten ska gå att bedriva?
+    \item What information is necessary for the organisation?
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Legala krav}
-  Avtal lagar och förordningar.
+\begin{frame}{Legal requirements}
+  Agreement, laws and regulations.
   \begin{itemize}
-    \item PUL,
-    \item Arkivlagen,
-    \item Offentlighets- och sekretesslagen,
-    \item MSBFS 2009:10,
-    \item Säkerhetsskyddslagen.
+    \item Personal Data Act,
+    \item The Archives Act,
+    \item Public Access to Information and Secrecy Act
+    \item MSBFS 2016:1,
+    \item Security Act.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Interna krav}
-  Krav som verksamheten ställer upp för att nå sina mål.
-  Exempelvis:
+\begin{frame}{Internal requirements}
+  Requirements that the organisation have to reach its goals.
+  For example:
   \begin{itemize}
     \item Vision,
-    \item affärsidé,
-    \item policyer,
-    \item värdegrund.
+    \item Business concept,
+    \item policies,
+    \item values.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Informationsklassificering}
+\begin{frame}{Classifying information}
   \begin{itemize}
-    \item Metod för att värdera hur skyddsvärd en informationstillgång är.
+    \item Method to evaluate how much an informational asset is worth
+      protecting.
 
-    \item För att kunna skapa ett lämpligt skydd.
+    \item To be able to create a suitable protection.
 
-    \item Värderar respektive tillgång utifrån:
+    \item Evaluate each asset based on:
       \begin{itemize}
-        \item tillgänglighet,
-        \item riktighet,
-        \item konfidentialitet.
+        \item Availability,
+        \item Integrity,
+        \item Confidentiality.
       \end{itemize}
 
-    \item Varje perspektiv har ett antal skyddsklasser.
+    \item Each perspective have a number of security levels.
 
   \end{itemize}
 \end{frame}
 
-\begin{frame}{MSB:s förslag på klassificeringsmodell}
+\begin{frame}{MSB:s suggestion on a classification model}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{msb-klassificering.png}
-    \caption{MSB:s förslag på klassificeringsmodell.}
+    \caption{MSB:s suggestion on a classification model.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Informationsklassificering}
+\begin{frame}{Classifying information}
   \begin{itemize}
-    \item Alla tillgångar klassificeras mot alla identifierade krav ur alla 
-      perspektiv.
-    \item Informationsägaren klassificerar.
-    \item Anpassa gärna modellen efter verksamheten.
+    \item All assets are classified using all the identified requirements based
+      on all the different perspectives.
+    \item The information owner should be the one classifying the information.
+    \item It is good to adapt the model based on the organisation.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Universitetets förslag på klassificeringsmodell}
+\begin{frame}{University's adaptation of a classification model.}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-klassificering.png}
-    \caption{Universitetets förslag på klassificeringsmodell för 
-    konfidentialitet.}
+    \caption{University's adaptation of a classification model from the
+      confidentiality perspective.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Universitetets förslag på klassificeringsmodell}
+\begin{frame}{University's adaptation of a classification model}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-tillganglighet.png}
-    \caption{Universitetets förslag på klassificeringsmodell för 
-    tillgänglighet.}
+    \caption{University's adaptation of a classification model from the
+      availability perspective.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Universitetets förslag på klassificeringsmodell}
+\begin{frame}{University's adaptation of a classification model}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-riktighet.png}
-    \caption{Universitetets förslag på klassificeringsmodell för riktighet.}
+    \caption{University's adaptation of a classification model from the
+      integrity perspective.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Exempel på resultat från universitetet}
+\begin{frame}{Example of the result from the university}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-klassresultat.png}
-    \caption{Del av universitetets resultat.}
+    \caption{Part of the result from the university.}
   \end{figure}
 \end{frame}
 
-\subsection{Riskanalys}
+\subsection{Risk analysis}
 
-\begin{frame}{Riskanalys}
-  Måste göra avgränsningar:
+\begin{frame}{Risk analysis}
+  Necessary for demarcation:
   \begin{itemize}
-    \item Vilka informationstillgångar vill man göra riskanalys på?
-    \item Vilka tillgångar är inte tillräckligt kritiska för en riskanalys?
+    \item What informational assets should we do a risk analysis on?
+    \item What informational assets are not critical enough for a risk analysis?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Riskanalys}
+\begin{frame}{Risk analysis}
   \begin{itemize}
-    \item Används för att anpassa skyddet efter verksamhetens tillgångar.
-    \item Genererar en förteckning över
+    \item Used to adapt the protection based on the assets of the organisation.
+    \item Generate a list over
       \begin{itemize}
-        \item befintliga hot,
-        \item hotens skadeverkningar, och
-        \item förslag på riskhantering.
+        \item existing threats,
+        \item consequences of the threats, and
+        \item suggestions for risk management.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Identifiera hot}
+\begin{frame}{Identify threats}
   \begin{itemize}
-    \item Använd brainstorming för att ta fram förslag på hot.
-    \item Ta med alla förslag!
-    \item Var specifik: avsiktligt eller oavsiktligt informationsläckage.
-    \item Exempel:
+    \item Use brain storming to find potential threats.
+    \item Include all the suggestions!
+    \item Be specific: Intensional or unintentional information leakage.
+    \item Example:
       \begin{itemize}
-        \item Medarbetare avsiktligt saboterar ett system.
-        \item Medarbetare snubblar i nätverkskablarna som är dragna på golvet.
-        \item Buggar i programvara.
-        \item Brand, översvämning.
+        \item An employee intentionally sabotages a system.
+        \item An employee accidentally trips on a network cable.
+        \item Software bug.
+        \item Fire, flooding.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Riskmatris}
+\begin{frame}{Risk matrix}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{riskmatris.png}
-    \caption{En riskmatris.}
+    \caption{A risk matrix.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Riskmatris}
+\begin{frame}{Risk matrix}
   \begin{itemize}
-    \item Bedöm sannolikhet och konsekvens av varje enskilt hot och placera dem 
-      i matrisen.
-    \item Fokus för konsekvenser är konsekvenser för verksamheten.
-    \item Ger visualiserat resultat, lättöverskådlig grund för prioritering av 
-      säkerhetsåtgärder.
+    \item Assess the probability and the consequence of each individual threat,
+      and place them in the matrix.
+    \item The focus on consequences should be consequences for the organisation.
+    \item Gives a visual result, easily understandable and gives a good overview
+      of how to prioritize security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Riskmatris}{Konsekvenser}
+\begin{frame}{Risk matrix}{Consequences}
   \begin{itemize}
-    \item Hur allvarlig blir konsekvensen för verksamheten om hotet blir 
-      verklighet?
-    \item Klargör för \emph{vem} det blir en konsekvens: verksamheten genom 
-      bieffekt av konsekvenser för samhället?
-    \item Underlättar att ange exempel för de olika nivåerna, exempelvis: 
-      kostnader, försämrat rykte, \dots
+    \item How severe is the consequence for the organisation of the threat
+      happens?
+    \item Clarify who will be a affected: Organisation through a side effect of
+      consequences in the society? 
+    \item Makes it easier to give examples for the different consequence levels.
+      For example: loss of reputation, higher cost, \dots.
   \end{itemize}
   \begin{center}
-    Allvarlig -- Betydande -- Måttlig -- Försumbar
+    Severe -- Considerable -- Moderate -- Negligible
   \end{center}
 \end{frame}
 
-\begin{frame}{Riskmatris}{Sannolikhet}
+\begin{frame}{Risk matrix}{Probability}
   \begin{itemize}
-    \item Hur troligt är det att hotet inträffar?
-    \item Underlättar med exempel för nivåerna: år, veckor, dagar?
+    \item What is the probability that the threat occur?
+    \item Makes it easier to give examples for the different levels: Years,
+      weeks, days?
   \end{itemize}
   \begin{center}
-    Mycket sällan -- Sällan -- Regelbundet -- Ofta
+    Very rarely -- Rare -- Regularly -- Often
   \end{center}
 \end{frame}
 
-\begin{frame}{Riskbehandling}
+\begin{frame}{Risk management}
   \begin{itemize}
-    \item Besluta om de identifierade hoten ska åtgärdas eller accepteras:
+    \item Decide whether the identified threats should be rectified or be
+      accepted:
       \begin{itemize}
-        \item Acceptera,
-        \item eliminera,
-        \item överföra,
-        \item behandla.
+        \item Accept,
+        \item eliminate,
+        \item transfer,
+        \item rectify.
       \end{itemize}
-    \item Vilka åtgärder ska vidtas?
+    \item What measures should be taken?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Möjliga åtgärder}
+\begin{frame}{Possible measures}
   \begin{itemize}
-    \item Administrativ säkerhet:
+    \item Administrative security:
       \begin{itemize}
-        \item Styrdokument,
-        \item kunskapshöjande åtgärder.
+        \item Governance documents,
+        \item Educational measures.
       \end{itemize}
-    \item Fysisk säkerhet:
+    \item Physical security:
       \begin{itemize}
-        \item Tillträdeskontroll,
-        \item låsta arkivskåp.
+        \item Access control,
+        \item Locked cabinets.
       \end{itemize}
-    \item IT-säkerhet:
+    \item IT-security:
       \begin{itemize}
-        \item Bradväggar,
-        \item kryptering,
-        \item fler under kursens gång.
+        \item Firewalls,
+        \item Encryption,
+        \item The course will cover more possible measures.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Exempel från universitetet}
-  Hemligt forskningsmaterial med stort affärsintresse: K3, R2, T2.
+\begin{frame}{University example}
+  Classified research material with large commercial interest: K3, R2 and T2.
   \begin{figure}
     \hfill
-    \subfloat[Hotbild]{\includegraphics[width=0.4\textwidth]{miun-hot.png}}
+    \subfloat[Threat assessment]{\includegraphics[width=0.4\textwidth]{miun-hot.png}}
     \hfill
-    \subfloat[Risker]{\includegraphics[width=0.4\textwidth]{miun-riskmatris.png}}
+    \subfloat[Risks]{\includegraphics[width=0.4\textwidth]{miun-riskmatris.png}}
     \hfill
-    \caption{Hotbild och bedömd risk.}
+    \caption{Threat assessment and assessed risk.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Exempel från universitetet}
+\begin{frame}{University example}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-atgard.png}
-    \caption{Åtgärder för att bemöta hotet.}
+    \caption{Measures to address the threat.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Slutligen---när ska analyserna göras?}
+\begin{frame}{Finally---when should the risk analysis be done?}
   \begin{itemize}
-    \item Årligen.
-    \item Vid förändrad verksamhet.
-    \item Vid planering av ny verksamhet.
+    \item Yearly.
+    \item With organisational change.
+    \item When planning a new organisation.
   \end{itemize}
 \end{frame}
 
 
-\section[Uppgifter]{Examinationsuppgifter}
+\section[Assignments]{Examination}
 
-\begin{frame}{Examinationsuppgifter}
+\begin{frame}{Examination}
   \begin{itemize}
-    \item M1 Ledningssystem för informationssäkerhet.
-    \item M2 Verksamhets- och riskanalys.
-    \item S3 Verksamhets- och riskanalys.
+    \item M1 Information Security Management System.
+    \item M2 Organisational and risk analysis.
+    \item S3 Organisational and risk analyses.
   \end{itemize}
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[allowframebreaks]{Referenser}
-	\small
+\begin{frame}[allowframebreaks]{References}
+  \small
   \printbibliography{}
 \end{frame}
 
