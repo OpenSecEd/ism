@@ -3,7 +3,7 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english,swedish]{babel}
+\usepackage[swedish,english]{babel}
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{color}
@@ -11,28 +11,39 @@
 \usepackage{multicol}
 \usepackage{csquotes}
 \usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
+\usepackage{acro}
 \addbibresource{msbforts.bib}
 \setbeamertemplate{bibliography item}[text]
 
-\mode<presentation>{%
-  \usetheme{Berlin}
-  \setbeamercovered{transparent}
-  \setbeamertemplate{footline}{\insertframenumber}
+\DeclareAcronym{isms}
+{
+  short = ISMS,
+  long = Information Security Management Systems,
 }
+\mode<presentation>{
+  \usetheme{Boadilla}
+  \usecolortheme{}
+  \usefonttheme{professionalfonts}
+  \setbeamercovered{transparent}
+}
+\setbeamerfont{frametitle}{size=\footnotesize}
+\setbeamerfont{framesubtitle}{size=\tiny}
 
-\title[Intro infosäk]{%
-  Fortsättning av\\
+\title[Introduction Information Security]{%
+  Continuation of the Swedish Civil Contingencies Agency (MSB) 
+  methodological support for \ac{isms}\\
   MSB:s metodstöd
 }
-\author{Carina Bengtsson och Daniel Bosk\footnote{%
+\author{Carina Bengtsson, Daniel Bosk and Lennart Franked\footnote{%
   Detta verk är tillgängliggjort under licensen Creative Commons 
   Erkännande-DelaLika 2.5 Sverige (CC BY-SA 2.5 SE).
 	För att se en sammanfattning och kopia av licenstexten besök URL 
 	\url{http://creativecommons.org/licenses/by-sa/2.5/se/}.
 }}
 \institute[MIUN ITM]{%
-  Avdelningen för informations- och kommunikationssytem,\\
-  Mittuniversitetet, Sundsvall.
+  Department of Informationsystems and Technologies\\
+  Mid Sweden University,
+  Sundsvall.
 }
 \date{\today}
 
@@ -50,7 +61,7 @@
   \titlepage{}
 \end{frame}
 
-\begin{frame}{Översikt}
+\begin{frame}{Overview}
   \begin{multicols}{2}
     \tableofcontents
   \end{multicols}
@@ -68,594 +79,584 @@
 %   15 and 30 frames, all told.
 
 
-\section{Analys}
+\section{Analysis}
 
-\subsection{Verksamhetsanalys}
+\subsection{Organisational Analyses}
 
-\begin{frame}{Vad ska skyddas?}
+\begin{frame}{What needs protecting?}
   \begin{itemize}
-    \item Vilka informationstillgångar har vi och hur skyddsvärda är de?
-    \item Ska leda till en strukturerad förteckning över
+    \item What informational assets do we have, and how much are they worth
+      protecting?
+    \item Should lead to a structured list over
       \begin{itemize}
-        \item vilka informationstillgångar som finns,
-        \item vilka krav och förväntningar som finns på dessa, samt
-        \item vilket värde respektive tillgång har.
+        \item what informational assets there are,,
+        \item what requirements and expectations they have, and
+        \item the worth of each asset.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Hitta informationstillgångarna}
+\begin{frame}{Finding the informational assets}
   \begin{itemize}
-    \item Tidigare kartläggningar?
-    \item Avdelningsvis?
+    \item Previous process mappings?
+    \item Department wise?
     \item IT-system?
-    \item Projekt?
-    \item Processer?
-    \item Funktionsvis?
+    \item Project?
+    \item Processes?
+    \item By function?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{MSB:s förslag på klassificeringsmodell}
+\begin{frame}{MSB:s suggestion on a classification model}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{msb-klassificering.png}
-    \caption{MSB:s förslag på klassificeringsmodell.}
+    \caption{MSB:s suggestion on a classification model.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Universitetets förslag på klassificeringsmodell}
+\begin{frame}{University's adaptation of a classification model.}
   \begin{figure}
     \includegraphics[width=\textwidth]{miun-klassificering.png}
-    \caption{Universitetets förslag på klassificeringsmodell för 
-    konfidentialitet.}
+    \caption{University's adaptation of a classification model from the
+      confidentiality perspective.}
   \end{figure}
 \end{frame}
 
-\subsection{Riskanalys}
+\subsection{Risk analysis}
 
-\begin{frame}{Riskanalys}
+\begin{frame}{Risk analysis}
   \begin{itemize}
-    \item Används för att anpassa skyddet efter verksamhetens tillgångar.
-    \item Genererar en förteckning över
+    \item Used to adapt the protection based on the assets of the organisation.
+    \item Generate a list over
       \begin{itemize}
-        \item befintliga hot,
-        \item hotens skadeverkningar, och
-        \item förslag på riskhantering.
+        \item existing threats,
+        \item consequences of the threats, and
+        \item suggestions for risk management.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Riskmatris}
+\begin{frame}{Risk matrix}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{riskmatris.png}
-    \caption{En riskmatris.}
+    \caption{A risk matrix.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Formella metoder?}
+\begin{frame}{Formal methods?}
   \begin{itemize}
-    \item Finns forskning som tagit fram mer formella metoder att göra detta.
-    \item Bättre då det ger mer objektivitet.
-    \item Dock är de svårare att använda.
+    \item There are a lot of research done regarding how to perform risk
+      analysis.
+    \item They can, however be difficult to use.
   \end{itemize}
 \end{frame}
 
-\section{Gapanalys}
+\section{Gap Analysis}
 
-\subsection{Vad är gapanalys?}
+\subsection{What is a gap analysis?}
 
 \begin{frame}
   \begin{itemize}
-    \item Analysera gapet mellan verksamhetens nuvarande och uppsatta 
-      informationssäkerhetsmål.
-    \item Metodstödet använder de normer som beskrivs i ISO 27002 istället för 
-      verksamhetens mål.
-    \item Resultatet visar alltså hur organisationens säkerhet står sig 
-      i jämförelse med förväntningarna i ISO 27002.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  Undersöker vilka säkerhetsåtgärder som
-  \begin{itemize}
-    \item finns och fungerar,
-    \item finns men inte fungerar,
-    \item inte finns,
-    \item inte behövs.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{När genomförs gapanalys?}
-  \begin{itemize}
-    \item Om man vill införa LIS\@.
-    \item Om man vill mäta, granska eller verifiera sin 
-      informationssäkerhetsnivå.
-    \item Om man vill ställa krav på sin informationssäkerhetsnivå.
-  \end{itemize}
-\end{frame}
-
-\subsection{Hur ska den genomföras?}
-
-\begin{frame}{Krav för gapanalys}
-  Analysledaren måste
-  \begin{itemize}
-    \item känna till verksamhetens behov och krav,
-    \item känna till existerande styrdokument för säkerhetsarbetet,
-    \item ha god kännedom och förståelse för normerna i standarden.
+    \item Analyses the gap between the organisations current information
+      security, and its set goals.
+    \item The methodological support from MSB uses the norm described in ISO
+      27002, instead of the goal of the organisation.
+    \item The following result will therefore show how the organisation stands
+      in comparison to the expectations in ISO 27002.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
+  Investigates what security measures that
   \begin{itemize}
-    \item Ha ett tydligt beslut att gapanalys ska genomföras,
-    \item eller ha mandat att fatta detta beslut.
-    \item Använd MSB:s checklista för gapanalys~\cite{MSB2011gb}.
+    \item exists and working,
+    \item exists but doesn't work,
+    \item doesn't exist,
+    \item isn't needed.
   \end{itemize}
 \end{frame}
 
-\subsection{En checklista}
+\begin{frame}{When is a gap analysis performed?}
+  \begin{itemize}
+    \item If you want to establish an \ac{isms}\@.
+    \item If you want to measure, audit or verify the information security level
+      of the organisation.
+    \item If you want to establish requirements on your information security
+      level.
+  \end{itemize}
+\end{frame}
+
+\subsection{How should it be done?}
+
+\begin{frame}{Requirements for performing a gap analysis}
+  The project leader of the analysis task must
+  \begin{itemize}
+    \item know the organisations need and requirements,
+    \item know any existing governance documents regarding the security work in
+      the organisation,
+    \item have a good knowledge and understanding of the norms in the standard.
+  \end{itemize}
+\end{frame}
 
 \begin{frame}
   \begin{itemize}
-    \item Utgår från ISO 27002.
-    \item Innehåller 133 säkerhetsåtgärder.
-    \item Varje säkerhetsåtgärd har en eller flera nivåstyrande frågor som 
-      ligger till grund för ett betyg mellan 0-3.
-    \item Varje säkerhetsåtgärd hör till ett avsnitt.
-    \item Varje avsnitt hör till ett kapitel (område).
-    \item Totalt finns 11 kapitel.
+    \item There must exist a clear decision that a gap analysis should be
+      performed,
+    \item Otherwise there must exist a clear mandate to be able to make this call.
+    \item As a support, use MSB:s checklist for gap analysis~\cite{MSB2011gb}.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Checklistan}
+\subsection{The checklist}
+
+\begin{frame}
   \begin{itemize}
-    \item Av totalt 133 säkerhetsåtgärder är 62 (55) kritiska att införa.
-    \item De kritiska åtgärderna är en basnivå för informationssäkerheten.
+    \item Based on ISO 27002.
+    \item Contains 133 security measures.
+    \item Each security measure have one or several questions that helps set the
+      level, based on a scale between 0-3.
+    \item Each security measure belongs to a section.
+    \item Each section belongs to a chapter (area/field).
+    \item There are in total 11 chapters.
   \end{itemize}
 \end{frame}
 
-\subsection{Praktiskt genomförande}
-
-\begin{frame}{Vem?}
+\begin{frame}{The Checklist}
   \begin{itemize}
-    \item Analysledare.
-    \item Experter i verksamheten som är bäst lämpade att svara på respektive 
-      område i checklistan.
-    \item Behöver inte nödvändigtvis vara chefer.
+    \item Out of a total of a 133 security measures, 62 (55) are deemed critical.
+    \item The critical measures is used as a lowest acceptable level for
+      the information security.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Praktiskt genomförande}
+\subsection{Practical Implementation}
+
+\begin{frame}{Who?}
   \begin{itemize}
-    \item Boka in möte med områdesexperterna som ska besvara frågorna.
-    \item Skicka ut relevanta frågor till experterna.
-    \item Vid mötet: gå igenom frågorna från början till slut.
-    \item Börja med nivåstyrande frågorna.
+    \item Analysis leader.
+    \item Experts in the organisation that is most suitable to answer each field
+      in the checklist.
+    \item Doesn't necessarily need to be the managers.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Nivåstyrande frågor}
+\begin{frame}{Practical Implementation}
+  \begin{itemize}
+    \item Book a meeting with the experts.
+    \item Send the questions to the experts in advance.
+    \item At the meeting: Work through all the questions.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Level setting questions}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{gap-nivafragor.png}
-    \caption{Nivåstyrande frågor som ger bedömt värde på säkerhetsåtgärd.}
+    \caption{Level setting questions that gives an estimate value of security
+      measures.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Sammanställning av delavsnitt}
+\begin{frame}{Summary of subsection}
   \begin{figure}
     \includegraphics[width=\textwidth]{gap-sammanstallning.png}
-    \caption{Betygen för delavsnitt ger betyg för avsnitt.}
+    \caption{The grade of the section is based upon the grades of each subsection}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Sammanställning av avsnitt}
+\begin{frame}{Summary of section}
   \begin{figure}
     \includegraphics[width=\textwidth]{gap-kapitel.png}
-    \caption{Betygen för avsnitt ger betyg för kapitel.}
+    \caption{The grade of the chapter is based upon the grades of each section.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Sammanställning av betyg}
+\begin{frame}{Summarizing the grades.}
   \begin{figure}
     \includegraphics[width=\textwidth]{gap-betyg.png}
-    \caption{Betygen för kapitlen ger ett totalbetyg.}
+    \caption{The total grade is based upon the grades of each chapter.}
   \end{figure}
 \end{frame}
 
-\subsection{Översikt av ISO 27002}
+\subsection{Overview of ISO 27002}
 
 \begin{frame}{ISO 27002}
   \begin{enumerate}
-    \item Säkerhetspolicy
-    \item Organisation av informationssäkerheten
-    \item Hantering av tillgångar
-    \item Personalresurser och säkerhet
-    \item Fysisk och miljörelaterad säkerhet
-    \item Styrning av kommunikation och drift
-    \item Styrning av åtkomst
-    \item Anskaffning, utveckling och underhåll av informationssystem
-    \item Hantering av informationssäkerhetsincidenter
-    \item Kontinuitetsplanering för verksamheten
-    \item Efterlevnad
+    \item Security Policy
+    \item Organisation surrounding information security.
+    \item Management of assets.
+    \item Human resources and security
+    \item Physical and environmental security
+    \item Control of communication and management.
+    \item Access control.
+    \item Acquiring, developing and maintaining information systems.
+    \item Managing information security incidents.
+    \item Contingency planning for the organisation.
+    \item Compliance.
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Säkerhetspolicy}
+\begin{frame}{ISO 27002}{Security Policy}
   \begin{itemize}
-    \item Ange en viljeriktning för verksamhetens informationssäkerhetsarbete.
-    \item Arbetet som genomförs måste uppfylla lagkrav och förväntningar.
-    \item Har en kritisk säkerhetsåtgärd: policydokument för infosäk.
+    \item What is the directional intent for the organisation in regards to
+      information security.
+    \item How should this be achieved.
+    \item Short explanation of terminology
+    \item How will the responsibility be divided.
+    \item Legal and internal requirements should be taken into account.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Organisation av informationssäkerheten}
+\begin{frame}{ISO 27002}{Organisation surrounding information security}
   \begin{itemize}
-    \item Ska finnas ett ramverk inom organisationen som styr 
-      informationssäkerhetsarbetet.
-    \item Styrdokument ska vara beslutade.
-    \item Det ska finnas ansvarsfördelning.
-    \item Innehåller sex kritiska säkerhetsåtgärder.
+    \item Should exist a framework within the organisation that is controlling
+      the information security.
+    \item Decisions need to be taken regarding governance documents.
+    \item Clearly stated how responsibilities are divided.
+    \item Contains six critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Hantering av tillgångar}
+\begin{frame}{ISO 27002}{Management of assets}
   \begin{itemize}
-    \item Organisationens tillgångar ska få ett lämpligt skydd.
-    \item Har två kritiska säkerhetsåtgärder: förteckning av tillgångar, 
-      riktlinjer för klassificering.
+    \item Ensuring that the assets in the organisation should have a suitable
+      protection.
+    \item Contains two critical security measures: List of assets and guidelines
+      for classifying assets.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Personalresurser och säkerhet}
+\begin{frame}{ISO 27002}{Human resources and security}
   \begin{itemize}
-    \item Ska ta informationssäkerheten i beaktande innan, under och efter 
-      anställning i organisationen.
-    \item Bakgrundskontroller, internutbildning, avsluta behörigheter efter 
-      anställning.
-    \item Har tre kritiska säkerhetsåtgärder.
+    \item What to take into account before, during and after employment within
+      the organisation. 
+    \item Background checks, in house training, how to handle permissions when
+      an employment has been ended.
+    \item Contains three critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Fysisk och miljörelaterad säkerhet}
+\begin{frame}{ISO 27002}{Physical and environmental security}
   \begin{itemize}
-    \item Förhindra obehörigt tillträde.
-    \item Minska risken för skador på informationstillgångar.
-    \item Har fyra kritiska säkerhetsåtgärder.
+    \item To prevent unauthorized access.
+    \item Reduce the risk of damage on informational assets.
+    \item Contains four critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Styrning av kommunikation och drift}
+\begin{frame}{ISO 27002}{Control of communication and management}
   \begin{itemize}
-    \item Informationsbehandlingsresurser ska ha en säker drift.
-    \item Tydlig ansvarsfördelning och dokumentation för detta.
-    \item Har 14 kritiska säkerhetsåtgärder.
+    \item Resources that are managing information should have a safe and reliable operation.
+    \item Clearly state the responsibilities and the documentation for this.
+    \item Have 14 critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Styrning av åtkomst}
+\begin{frame}{ISO 27002}{Access Control}
   \begin{itemize}
-    \item Åtkomst till system bör styras utifrån verksamhets- och 
-      säkerhetskrav.
-    \item Har tio kritiska säkerhetsåtgärder.
+    \item Access to the system should be controlled through the organisational
+      and security requirements.
+    \item Contains ten critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Anskaffning, utveckling och underhåll av 
-  informationssystem}
+\begin{frame}{ISO 27002}{Acquiring, developing and maintaining information systems}
   \begin{itemize}
-    \item Säkerställa att nya och befintliga informationssystem håller god 
-      säkerhetsnivå.
-    \item Har sju kritiska säkerhetsåtgärder.
+    \item Ensure that new and existing information systems are keeping a high
+      security level.
+    \item Contains seven critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Hantering av informationssäkerhetsincidenter}
+\begin{frame}{ISO 27002}{Managing information security incidents}
   \begin{itemize}
-    \item Inträffade incidenter ska tas om hand.
-    \item Minska risken för att incidenten sker igen.
-    \item Har två kritiska säkerhetsåtgärder.
+    \item Security incidents should be handled.
+    \item Reduce the risk of an incident happening again.
+    \item Contains two critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Kontinuitetsplanering för verksamheten}
+\begin{frame}{ISO 27002}{Contingency planning for the organisation}
   \begin{itemize}
-    \item Motverka avbrott i verksamheten.
-    \item Lära sig hantera avbrott som ändå uppstår.
-    \item Har tre kritiska säkerhetsåtgärder.
+    \item Prevent disruptions in the organisation.
+    \item Learn how to deal with disruptions.
+    \item Contains three critical security measures.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002}{Efterlevnad}
+\begin{frame}{ISO 27002}{Compliance}
   \begin{itemize}
-    \item Organisationen ska efterleva de externa och interna krav som finns på 
-      informationssäkerhetsarbetet.
-    \item Har tre kritiska säkerhetsåtgärder.
+    \item Ensures that the organisation comply to the external and internal
+      requirements that exist in regards to information security.
+    \item Contains three critical security measures.
   \end{itemize}
 \end{frame}
 
-\subsection{Resultat}
+\subsection{Results}
 
-\begin{frame}{Resultat av gapanalys}
+\begin{frame}{Result of the gap analysis}
   \begin{itemize}
-    \item Vilket skydd är infört?
-    \item Vilken omfattning och kvalitet finns på det införda skyddet?
-    \item Vilka svagheter och styrkor som finns i det införda skyddet?
-    \item Hur kan man gå vidare med att implementera LIS\@?
+    \item Which security measurements are implemented?
+    \item What are the scope and quality on the implemented measurements?
+    \item What weaknesses and strength are there on the implemented
+      measurements?
+    \item What is the next step\@?
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Slutrapport}
+\begin{frame}{Report}
   \begin{itemize}
-    \item Hur är arbetet genomfört?
-    \item Vilka ingångsvärden är använda?
-    \item Resultatet av analysen.
-    \item Sammanfattning av resultatet.
-    \item Förslag på vidare arbete.
+    \item How well have the work been done?
+    \item What are the input values that have been used?
+    \item What is the result of the analysis?
+    \item Summary of the entire work.
+    \item Suggestions on how to continue.
   \end{itemize}
 \end{frame}
 
+\section{Establish}
 
-\section{Utforma}
+\subsection{Measurement}
 
-\subsection{Åtgärder}
-
-\begin{frame}{Att välja säkerhetsåtgärder}
+\begin{frame}{How to choose the security measurement}
   \begin{figure}
     \includegraphics[width=\textwidth]{msb-atgarder.png}
-    \caption{Att välja säkerhetsåtgärder.}
+    \caption{Choosing security measures.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Att välja säkerhetsåtgärder}
+\begin{frame}{Selecting the measurements}
   \begin{description}
-    \item[Best practice] Utgår från olika säkerhetsåtgärder i ISO 27002.
-    \item[Riskanalys] Skräddarsyr säkerhetsåtgärder efter behov utan 
-      utgångspunkt i någon norm.
+    \item[Best practice] Based upon different security measures listed in ISO
+      27002.
+    \item[Risk analysis] Tailored security measures based solely on
+      organisations need.
   \end{description}
   \begin{itemize}
-    \item Grundläggande analyser -- behovet av skydd.
-    \item Kommer skyddet att ge effekt?
-    \item Fokus på \emph{om} de ska införas, inte \emph{hur}.
+    \item Base analysis -- the need for protection.
+    \item Will the protection have wished effect?
+    \item Focus on \emph{if} they should be implemented, not \emph{how}.
   \end{itemize}
 \end{frame}
-\begin{frame}{Typer av åtgärder}
+\begin{frame}{Type of measurements}
   \begin{itemize}
-    \item Styrdokument.
-    \item Analyser, övervakning.
-    \item Tekniskt skydd.
-    \item Utbildningar.
-    \item Processer.
+    \item Governance documents.
+    \item Analysis, monitoring.
+    \item Technical protection.
+    \item Education.
+    \item Processes.
   \end{itemize}
 \end{frame}
 
-\subsection{Processer}
-\begin{frame}{Utforma säkerhetsprocesser}
+\subsection{Processes}
+\begin{frame}{Develop security processes}
   \begin{itemize}
-    \item Sammanhörande aktiviteter som svarar mot ett definierat behov.
-    \item Integrera gärna med befintliga processer.
-    \item Exempelvis LIS (strategisk nivå).
-    \item Exempelvis informationssäkerhetsklassificering, åtkomsthantering 
-      (operativ nivå).
+    \item Collection of activities that manages a defined need.
+    \item Integrate with existing processes.
+    \item For example \ac{isms}.
+    \item Examples: Information security classification, access control.
   \end{itemize}
 \end{frame}
-\begin{frame}{Utforma processer}
+\begin{frame}{Developing processes}
   \begin{itemize}
-    \item Behöver bred kompetens.
-    \item Representera hela organisationen.
-    \item Underlättar att samordna med befintliga processer.
-  \end{itemize}
-\end{frame}
-
-\subsection{Styrdokument}
-\begin{frame}{Utforma styrdokument}
-  \begin{itemize}
-    \item Börja med en policy, organisationens viljeriktning.
-    \item Identifiera befintliga dokument: revidera, upphäva, införa nya.
-    \item Anpassa efter nuvarande dokumentstruktur.
-  \end{itemize}
-\end{frame}
-\begin{frame}{Utforma styrdokument}
-  Glöm inte
-  \begin{itemize}
-    \item versionshantering,
-    \item dokumentägare,
-    \item beslutsdatum,
-    \item beslutare.
-  \end{itemize}
-  Skriv dem för att läsas.
-\end{frame}
-
-
-\section{Införa}
-\begin{frame}{Införa}
-  \begin{itemize}
-    \item Säkerhetsprocesser är utformade och beslut finns för 
-      säkerhetsåtgärder.
-    \item Kan göras i projekt eller i linjeorganisationen.
+    \item Wide competence.
+    \item Representatives from the entire (affected parts) organisation.
+    \item Makes it easier to coordinate with existing processes.
   \end{itemize}
 \end{frame}
 
-\subsection{Planera genomförande}
-\begin{frame}{Planera genomförande}
+\subsection{Governance documents}
+\begin{frame}{Develop governance documents}
   \begin{itemize}
-    \item Finns något leveransobjekt som bör prioriteras?
-      (Strategisk vinning?)
-    \item Är vissa leveransobjekt beroende av varandra?
-    \item Vad kan konstrueras, vad kan anskaffas?
-    \item Behöver tidsplan och kommunicera arbetet.
+    \item Start with one policy, what is the directional intent of the organisation.
+    \item Identify existing documents: revise, revoke, introduce new.
+    \item Adapt based on the current document structure.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Develop governance documents}
+  Don't forget
+  \begin{itemize}
+    \item version control,
+    \item document owner,
+    \item decision date,
+    \item who took the decision.
+  \end{itemize}
+  They should be written in such a way that everyone can understand them
+\end{frame}
+
+\section{Implementation}
+\begin{frame}{Implementation}
+  \begin{itemize}
+    \item At this stage security processes are formed and decisions have been
+      made for taking security measures.
+    \item Can be done in project form, or just incorporated into the regular work load.
   \end{itemize}
 \end{frame}
 
-\subsection{Konstruera och anskaffa}
-\begin{frame}{Konstruera och anskaffa}
+\subsection{Plan the implementation}
+\begin{frame}{Plan the implementation}
+  \begin{itemize}
+    \item Should something be prioritized?
+    \item Do some implementation measures dependend on others?
+    \item What can be constructed, and what can be procured?
+    \item Need a time plan, and ensure everyone is aware that the work will
+      start.
+  \end{itemize}
+\end{frame}
+
+\subsection{Construct and procure}
+\begin{frame}{Construct and procure}
   \begin{description}
-    \item[Konstruera] Organisationen utvecklar själv.
-    \item[Anskaffa] Organisationen köper leveransobjekt utifrån.
+    \item[Construct] The organisation to in-house development.
+    \item[Procure] The organisation procures solutions.
   \end{description}
   \begin{figure}
     \includegraphics[width=\textwidth]{infora.png}
-    \caption{Process för att konstruera och anskaffa.}
+    \caption{Process to construct and procure.}
   \end{figure}
 \end{frame}
-\begin{frame}{Kravställning}
+\begin{frame}{Defining requirements}
   \begin{itemize}
-    \item Viktigt med tydlig kravställning.
-    \item IT-avdelningen vet inte hur skyddsvärd information den hanterar -- 
-      måste specificera!
-    \item Tänk på användbarheten för att få organisationen att inte gå runt 
-      åtgärderna.
+    \item Important clearly have stated what requirements exist.
+    \item IT-department are unaware of how much the information they are
+      managing is worth protecting -- Need to be specified.
+    \item Think about usability to ensure that the organisation do not
+      circumvent the measures.
   \end{itemize}
 \end{frame}
 
-\subsection{Inför}
-\begin{frame}{Inför}
+\subsection{Implement}
+\begin{frame}{Implement}
   \begin{itemize}
-    \item En samordnare, kallad införandeledare.
-    \item Flera införandeansvariga: ansvariga för det praktiska arbetet.
-    \item Arbetet genomförs av införandegrupper: chefer för områden berörda av 
-      säkerhetsåtgärd.
+    \item One coordinator.
+    \item Multiple persons responsible for the practical.
+    \item The work is carried out in groups: Include area managers that are
+      affected by the security measures.
   \end{itemize}
 \end{frame}
-\begin{frame}{Införandegrupp}
-  Fokusera på:
+\begin{frame}{Groups responsible for implementing the security measures}
+  Focus on:
   \begin{itemize}
-    \item Bred representation av verksamheten
-    \item Utbilda personal?
-      Måste kunna använda säkerhetsåtgärderna.
-    \item Vem ska förvalta och hur?
-      Behöver förvaltningsplan.
-    \item Ska göra organisationen mottaglig för åtgärderna.
+    \item Representation of the entire organisation.
+    \item Do the employees need training?
+      They need to be able to use and understand the security measures.
+    \item Who should manage the security measures?
+      There is a need for a management plan.
+    \item Ensuring that the organisation will embrace the measures.
   \end{itemize}
 \end{frame}
-\begin{frame}{Förändra beteende}
+\begin{frame}{Changing the behaviour}
   \begin{itemize}
-    \item Många säkerhetsåtgärder kräver förändrat beteende.
-    \item Kommunicera och förklara \emph{varför} -- målgruppsanpassa detta!
+    \item Many security measures needs a change in the behaviour to work.
+    \item Communicate and explain \emph{why} -- Make sure the explanation is
+      targeted.
   \end{itemize}
 \end{frame}
 
 
-\section{Följa upp}
+\section{Follow Up}
 
-\subsection{Övervaka}
-\begin{frame}{Övervaka}
+\subsection{Monitor}
+\begin{frame}{Monitor}
   \begin{itemize}
-    \item Sker löpande på olika nivåer i verksamheten.
-    \item Kommer att ligga till grund för en djupare granskning och redovisning 
-      för ledningen.
+    \item Should be done continuously in different levels in the organisation.
+    \item Will be used as a base for further analysis of the security measure,
+      and for presenting to the top management.
   \end{itemize}
 \end{frame}
-\begin{frame}{Övervaka}
-  Skapa förutsättningar att utvärdera:
+\begin{frame}{Evaluation}
+  Ensure that the right conditions exist for evaluation:
   \begin{itemize}
-    \item Verkan av LIS\@: tillräckligt skydd mot aktuella hot?
-    \item Verkan av säkerhetsåtgärder: har säkerhetsåtgärderna införts?
-    \item Påverkan på informationstillgångar: har sekretessen blivit bättre?
+    \item Effect of \ac{isms}\@: Are there sufficient measurements in place towards the current threats?
+    \item Effect of the security measurements: Have they been implemented?
+    \item How have the informational assets been affected: Have the secrecy become greater?
   \end{itemize}
 \end{frame}
-\begin{frame}{Incidenthantering}
+\begin{frame}{Incident management}
   \begin{itemize}
-    \item En del av övervakningen som syftar till att upptäcka nya hot.
-    \item Upptäcka brister i åtgärder för tidigare kända hot.
-    \item Innefattar även att åtgärda dessa brister.
+    \item A part of the monitoring, which purpose is to discover new threats.
+    \item Discover any shortcomings in the measurements taken for previously
+      known threats.
+    \item This also includes fixing these shortcomings.
   \end{itemize}
   \begin{figure}
     \includegraphics[height=0.4\textheight]{overvakning.png}
-    \caption{Cykel för övervakning och incidenthantering.}
+    \caption{Cycle for monitoring and incident management.}
   \end{figure}
 \end{frame}
 
-\subsection{Granska}
-\begin{frame}{Granska}
+\subsection{Review}
+\begin{frame}{Review}
   \begin{itemize}
-    \item En djupare analys av övervakningen.
-    \item Del av verksamhetsuppföljning, exempelvis internrevision.
-    \item Utgå från information från övervakningen.
-    \item Fungerar LIS\@?
+    \item A deeper analysis of the result from the monitoring.
+    \item Part of the recurring organisational follow-ups, for example internal
+      revision.
+    \item Use the information from the monitoring as base.
+    \item Is the \ac{isms} working\@?
   \end{itemize}
 \end{frame}
-\begin{frame}{Krav på granskning}
+\begin{frame}{Audit requirement}
   \begin{itemize}
-    \item ISO 27001: ledningen ska se till att detta görs -- och ta del av 
-      resultatet.
-    \item Hur?
+    \item ISO 27001: the top management must ensure this is done -- and should
+      take part of the result.
+    \item How?
       \begin{itemize}
-        \item Använd ISO 27001 för LIS\@.
-        \item Använd ISO 27002 för säkerhetsåtgärderna.
+        \item Use ISO 27001 \ac{isms}\@.
+        \item Use ISO 27002 for the security measures.
       \end{itemize}
-    \item Vem?
-      Oberoende part (revisor) med stöd av LIS-ansvarig.
+    \item Who?
+      Independent auditor with the support from those who are responsible for
+      the \ac{isms}.
   \end{itemize}
 \end{frame}
 
-\subsection{Ledningens genomgång}
-\begin{frame}{Ledningens genomgång}
+\subsection{Top Management Review}
+\begin{frame}{Top Management Review}
   \begin{itemize}
-    \item Ledningen har ansvaret för verksamheten.
-    \item Viktigt att de ges möjlighet att förstå resultaten av granskningen.
-    \item Bra med en årlig genomgång av informationssäkerheten.
+    \item The top management are responsible for the entire organisation.
+    \item It is important that they understand the result of the audit.
+    \item Recommended to have a yearly review of the information security.
   \end{itemize}
 \end{frame}
-\begin{frame}{Ledningens genomgång}
+\begin{frame}{Top Management Review}
   \begin{itemize}
-    \item Genomförs av informationssäkerhetsansvarig och experterna från 
-      gapanalysen.
-    \item Bör göras en gång per år när det är lämpligt utefter övriga 
-      verksamheten.
+    \item Should be given by the person responsible for the information
+      security, along with the experts from the GAP-analysis.
+    \item Should be done yearly.
   \end{itemize}
 \end{frame}
 \begin{frame}{\insertsubsectionhead}
   \begin{itemize}
-    \item Ska innefatta resultat av granskningar, sårbarheter och hot som inte 
-      behandlats tillräckligt väl vid senaste riskbedömningen, \dots
-    \item Ska resultera i beslut som rör förbättring av verkan av LIS, 
-      uppdatering av riskbedömnings- och riskbehandlingsplanen, \dots
+    \item Should include the result of the audits, weaknesses and threats that
+      haven't been fully covered from the last risk assessment.
+    \item Should result in decisions regarding how to improve the result of the
+      \ac{isms}, update of risk assessment and risk treatment plan.
   \end{itemize}
 \end{frame}
 
 
-\section{Förbättra}
+\section{Improve}
 
-\subsection{Utveckla LIS och skyddet}
+\subsection{Improve \ac{isms} and the protection}
 \begin{frame}{\insertsubsectionhead}
   \begin{itemize}
-    \item Använd resultat av uppföljningar och ledningens genomgång.
-    \item Kravs strukturerat arbetssätt -- PDCA-cykeln.
-    \item Standardisera: inför åtgärder i styrdokument, se till att de införs 
-      korrekt.
-      \begin{itemize}
-        \item \enquote{Men så här har vi ju alltid gjort!}
-      \end{itemize}
+    \item Use the result from follow-ups and the top management review.
+    \item Recommended that the process is done in a structured way, PDCA
+    \item Standardise: Establish the measures in the governance documents, ensure
+      that they are implemented correctly.
   \end{itemize}
 \end{frame}
 
-\subsection{Kommunicera förbättringar}
+\subsection{Communicate the improvements}
 \begin{frame}{\insertsubsectionhead}
-  Skapa intresse som gör att
+  Try to create an interest that ensures that the
   \begin{itemize}
-    \item medarbetare \emph{lär sig},
-    \item får en \emph{positiv} attityd mot säkerhetsarbetet,
-    \item har en \emph{intention} om att arbeta för att öka 
-      informationssäkerheten,
-    \item och med rätt förutsättningar förändrar sitt \emph{beteende}.
+    \item employees \emph{will learn},
+    \item get a \emph{positive} attitude towards information security,
+    \item have an \emph{intention} to work towards improving the information
+      security,
+    \item and changes their behavior.
   \end{itemize}
 \end{frame}
-\begin{frame}{\insertsubsectionhead}{''Vi arbetar inte med säkerhet''}
-  \begin{quote}
-    Vi har inget att skydda, vi har ju inget hemligt.
-  \end{quote}
-  \begin{quote}
-    Det är skillnad på dem som bara jobbar med säkerhet, och mig som faktiskt 
-    har ett jobb att sköta.
-  \end{quote}
-  \begin{quote}
-    Det händer ju aldrig oss \dots de här åtgärderna behövs inte.
-  \end{quote}
-  \begin{quote}
-    Det kostar för mycket med säkerhet, är det verkligen värt pengarna?
-  \end{quote}
-\end{frame}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%
 
