@@ -2,6 +2,7 @@
 %\documentclass[handout]{beamer}
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
+\usepackage{lmodern,textcomp}
 \usepackage[T1]{fontenc}
 \usepackage[swedish,english]{babel}
 \usepackage{url}
@@ -10,7 +11,7 @@
 \usepackage{subfig}
 \usepackage{csquotes}
 \usepackage{acro}
-\usepackage[natbib,style=alphabetic,maxbibnames=99]{biblatex}
+\usepackage[backend=biber,style=alphabetic,maxbibnames=99]{biblatex}
 \addbibresource{msbintro.bib}
 \DeclareAcronym{isms}
 {
@@ -108,7 +109,7 @@
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Tieto-breakdown}
-  \citet{Lindkvist2012tdf} gives the following summary:
+  \cite{Lindkvist2012tdf} gives the following summary:
   \begin{description}
     \item[Friday afternoon] Tieto notices a disruption in their IT-systems.
       350 pharmacies lost contact with their IT-systems.
@@ -178,7 +179,7 @@
 
 \begin{frame}{Methodological overview}
   \begin{figure}
-    \includegraphics[width=\textwidth]{metodstod-overview.png}
+    \includegraphics[width=6cm]{metodstod-overview.png}
     \caption{Overview over the methodological support.}
   \end{figure}
 \end{frame}
@@ -275,6 +276,8 @@
     \item[Personal Data Act 1998:204] adds restrictions on how an organisation manages
       personal data.
 
+    \item[GDPR] General Data Protection Regulation, Applies in all EU country
+      starting from 25th of May 2018.
     \item[Public Access to Information and Secrecy Act 2009:40] Says that certain
       information \emph{must} be available for the public, while other information
       should \emph{not} be.
@@ -288,6 +291,47 @@
   \end{description}
 \end{frame}
 
+\begin{frame}{eu:gdpr}{General Data Protection Regulation}
+  \begin{itemize}
+    \item Replacing Personal Data Act 1998:204
+    \item Regulates how personal data are allowed to be stored and used.
+      \begin{itemize}
+        \item Protects a persons right of privacy\cite[art. 5]{eu:gdpr}
+        \item Personal data can only be stored for as long as there is a need
+          for it\cite[art. 5]{eu:gdpr}.
+      \item Each person must give explicit
+        consent to a company/organisation to store, publish or share personal
+        data about them\cite[art. 7]{eu:gdpr}.
+        \item Ensure that a person have the right to get access to all personal
+          data that has been collected about them\cite[art. 15]{eu:gdpr}.
+        \item Persons right to erasure\cite[art. 17]{eu:gdpr}. 
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}{GDPR cont.}{General Data Protection Regulation}
+    \begin{itemize}
+      \item Possibility to transfer personal data (data
+          portabililty)\cite[art. 20]{eu:gdpr}.  
+      \item Records regarding processing activities must be maintained \cite[art.
+        30]{eu:gdpr}.
+      \item Personal data breaches must be reported to the supervisory
+        authority, without undue delay, not later than 72 hours\cite[art.
+        33]{eu:gdpr}.
+    \end{itemize}
+\end{frame}
+\begin{frame}{GDPR cont.}{General Data Protection Regulation}
+\begin{itemize}
+  \item Data protection by design and default \cite[art. 25]{eu:gdpr}.
+      \item Individuals needs to be informed about the personal data
+        breach\cite[art. 34]{eu:gdpr}.
+    \item An independent agency should ensure that these rules are followed
+      \cite[art 51]{eu:gdpr}.
+    \item If the organisation does not comply to these regulations, they can be
+      fined up to 4\% worldwide turnover or €20 Million, whichever is greater
+      \cite[art 83]{eu:gdpr}.
+    \item and much more.
+\end{itemize}
+\end{frame}
 \begin{frame}{MSBFS 2016:1}
   \begin{itemize}
     \item Due to increased electronic information exchange in the society, there
