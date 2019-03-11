@@ -2,16 +2,18 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[official]{eurosym}
 \usepackage[english,swedish]{babel}
 \usepackage{booktabs}
 \usepackage[iso,swedish]{isodate}
+\usepackage{acro}
 \usepackage{tabularx}
 \usepackage{url}
 \usepackage{varioref,prettyref}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{subfig}
-\usepackage[style=alphabetic,maxbibnames=99,backend=bibtex]{biblatex}
+\usepackage[style=alphabetic,maxbibnames=99,backend=biber]{biblatex}
 \setbeamertemplate{bibliography item}[text]
 \usepackage[varioref,prettyref]{miunmisc}
 
@@ -23,9 +25,15 @@
   \usefonttheme{professionalfonts}
   \setbeamercovered{transparent}
 }
+
 \setbeamerfont{frametitle}{size=\footnotesize}
 \setbeamerfont{framesubtitle}{size=\tiny}
 
+\DeclareAcronym{isms}
+{
+  short = ISMS,
+  long = Information Security Management Systems,
+}
 
 \title[Intro infosäk]{%
   Introduction to\\
@@ -63,7 +71,7 @@
 	% You might wish to add the option [pausesections]
 \end{frame}
 
-\section[Metodstöd]{MSB:s metodstöd}
+\section[Information Security]{Information Security}
 
 \begin{frame}{MSB}
   \begin{itemize}
@@ -130,14 +138,14 @@
 
 \begin{frame}{What is information security?}
   \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-struktur.png}
+    \includegraphics[height=0.7\textheight]{Figures/infosak-struktur.png}
     \caption{Structure of information security.}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Structure}
   \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-process.png}
+    \includegraphics[height=0.7\textheight]{Figures/infosak-process.png}
     \caption{To work with information security}
   \end{figure}
 \end{frame}
@@ -164,6 +172,7 @@
   \end{description}
 \end{frame}
 
+\subsection{Information Security Management System}
 \begin{frame}{Management System}
   \begin{itemize}
     \item Everyone have a \enquote{system} to manage an organisation.
@@ -244,7 +253,7 @@
   \end{itemize}
 \end{frame}
 
-\section{ISO 27000}
+\subsection{ISO 27000}
 \begin{frame}{ISO 27001}
   \begin{itemize}
     \item ISO 27001 is a continuous process that strives towards constant
@@ -272,6 +281,7 @@
 \end{frame}
 
 \section[Methodilogical support]{MSB:s methodological support}
+\subsection{Introduction to the methodilogical support}
 
 \begin{frame}{Methodological support}
   \begin{itemize}
@@ -320,8 +330,8 @@
   \end{itemize}
 \end{frame}
 
-\section{Identify and Analyse}
-\begin{frame}{Identify and Analyse --- Introduction}
+\subsection{Identify and Analyse --- Overview}
+\begin{frame}{Identify and Analyse --- Overview}
   \begin{itemize}
     \item Analyse the external contexts~\footnote{Omvärldsanalys} and the organisation.
     \item Requires knowledge about how the current situation looks
@@ -450,7 +460,7 @@
     \item An independent agency should ensure that these rules are followed
       \cite[art 51]{eu:gdpr}.
     \item If the organisation does not comply to these regulations, they can be
-      fined up to 4\% worldwide turnover or €20 Million, whichever is greater
+      fined up to 4\% worldwide turnover or \euro{}20 Million, whichever is greater
       \cite[art 83]{eu:gdpr}.
     \item and much more.
 \end{itemize}
