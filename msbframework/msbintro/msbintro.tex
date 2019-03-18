@@ -2,16 +2,18 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[official]{eurosym}
 \usepackage[english,swedish]{babel}
 \usepackage{booktabs}
 \usepackage[iso,swedish]{isodate}
+\usepackage{acro}
 \usepackage{tabularx}
 \usepackage{url}
 \usepackage{varioref,prettyref}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{subfig}
-\usepackage[style=alphabetic,maxbibnames=99,backend=bibtex]{biblatex}
+\usepackage[style=alphabetic,maxbibnames=99,backend=biber]{biblatex}
 \setbeamertemplate{bibliography item}[text]
 \usepackage[varioref,prettyref]{miunmisc}
 
@@ -23,9 +25,15 @@
   \usefonttheme{professionalfonts}
   \setbeamercovered{transparent}
 }
+
 \setbeamerfont{frametitle}{size=\footnotesize}
 \setbeamerfont{framesubtitle}{size=\tiny}
 
+\DeclareAcronym{isms}
+{
+  short = ISMS,
+  long = Information Security Management Systems,
+}
 
 \title[Intro infosäk]{%
   Introduction to\\
@@ -63,7 +71,7 @@
 	% You might wish to add the option [pausesections]
 \end{frame}
 
-\section[Metodstöd]{MSB:s metodstöd}
+\section[Information Security]{Information Security}
 
 \begin{frame}{MSB}
   \begin{itemize}
@@ -144,14 +152,14 @@
 
 \begin{frame}{What is information security?}
   \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-struktur.png}
+    \includegraphics[height=0.7\textheight]{Figures/infosak-struktur.png}
     \caption{Structure of information security.}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Structure}
   \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-process.png}
+    \includegraphics[height=0.7\textheight]{Figures/infosak-process.png}
     \caption{To work with information security}
   \end{figure}
 \end{frame}
@@ -178,6 +186,7 @@
   \end{description}
 \end{frame}
 
+\subsection{Information Security Management System}
 \begin{frame}{Management System}
   \begin{itemize}
     \item Everyone have a \enquote{system} to manage an organisation.
@@ -258,7 +267,7 @@
   \end{itemize}
 \end{frame}
 
-\section{ISO 27000}
+\subsection{ISO 27000}
 \begin{frame}{ISO 27001}
   \begin{itemize}
     \item ISO 27001 is a continuous process that strives towards constant
@@ -286,6 +295,7 @@
 \end{frame}
 
 \section[Methodilogical support]{MSB:s methodological support}
+\subsection{Introduction to the methodilogical support}
 
 \begin{frame}{Methodological support}
   \begin{itemize}
@@ -334,10 +344,10 @@
   \end{itemize}
 \end{frame}
 
-\section{Identify and Analyse}
-\begin{frame}{Identify and Analyse --- Introduction}
+\subsection{Identify and Analyse --- Overview}
+\begin{frame}{Identify and Analyse --- Overview}
   \begin{itemize}
-    \item Analyse the external contexts (business intelligence)~\footnote{Omvärldsanalys} and the organisation.
+    \item Analyse the external contexts~\footnote{Omvärldsanalys} and the organisation.
     \item Requires knowledge about how the current situation looks
       like~\footnote{Nulägesanalys}.
       \begin{itemize}
@@ -464,7 +474,7 @@
     \item An independent agency should ensure that these rules are followed
       \cite[art 51]{eu:gdpr}.
     \item If the organisation does not comply to these regulations, they can be
-      fined up to 4\% worldwide turnover or €20 Million, whichever is greater
+      fined up to 4\% worldwide turnover or \euro{}20 Million, whichever is greater
       \cite[art 83]{eu:gdpr}.
     \item and much more.
 \end{itemize}
@@ -535,7 +545,7 @@
 \end{frame}
 
 \begin{frame}{Analyse Informational Assets}
-  \begin{block}
+  \begin{block}{Informational Assets}
     Informational assets are the organisations information and its resources
     that deals with information. For example to receive, store, process, show or
     communicate it~\cite{msb_metodstod}.
@@ -560,6 +570,57 @@
   \begin{block}{Previous Work?}
     Are there any previous analysis available?
   \end{block}
+\end{frame}
+
+\begin{frame}{Documenting the informational assets}
+  When documenting the informational assets, ensure that at least the following
+  is documented:
+  \begin{itemize}
+    \item Name
+    \item Description
+    \item Type of information, for example personal data.
+    \item Critical?
+    \item Owner and contact information
+  \end{itemize}
+\end{frame}
+
+\subsection{Risk analysis}
+\begin{frame}{Risk analysis}
+  \begin{itemize}
+    \item Identifies the information security risks.
+    \item Can be performed over generally over the organisation, or on a
+      specific object.
+    \item The identified risks are then assessed based on probability and
+      consequence.
+  \end{itemize}
+  \begin{block}{What to acheive with a risk analysis}
+    \begin{itemize}
+      \item What can happen?
+      \item How probable is it?
+      \item What is the consequences?
+    \end{itemize}
+    Note that the result of the risk analysis shouldn't be seen as the absolute
+    truth.
+  \end{block}
+\end{frame}
+
+\begin{frame}{When should the Risk Analysis be performed?}
+  \begin{itemize}
+    \item Not necessary to perform the risk analysis after analysing the
+      organisation or external and legal requirements.
+    \item If it is performed after, then the results from these can be used in
+      the risk analysis.
+    \item Otherwise, it is possible to rely on the existing knowledge of the
+      organisation.
+  \end{itemize}
+\end{frame}
+\begin{frame}{When should the Risk Analysis be performed?}
+  Examples of when it can be suitable to perform a risk analysis.
+  \begin{itemize}
+    \item Procuring new services?
+    \item Outsouring
+    \item Organisational changes
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Classifying information}
@@ -629,27 +690,7 @@
   \end{figure}
 \end{frame}
 
-\subsection{Risk analysis}
-\begin{frame}{Risk analysis}
-  \begin{itemize}
-    \item Identifies the information security risks.
-    \item Can be performed over generally over the organisation, or on a
-      specific object.
-    \item The identified risks are then assessed based on probability and
-      consequence.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{When should the Risk Analysis be performed?}
-  \begin{itemize}
-    \item Not necessary to perform the risk analysis after the business
-      intelligence and organisational analysis.
-    \item If it is performed after, then the results from these can be used in
-      the risk analysis.
-    \item Otherwise, it is possible to rely on the existing knowledge of the
-      organisation.
-  \end{itemize}
-\end{frame}
+%=======================================================================%
 
 \begin{frame}{How should the process for Risk Analysis look like?}
   \begin{block}{Already have a process?}
