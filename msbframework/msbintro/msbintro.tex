@@ -64,6 +64,13 @@
 		\tableofcontents[currentsection, currentsubsection]
 	\end{frame}
 }
+\AtBeginSubsubsection[]{%
+	\begin{frame}<beamer>{Overview}
+    \begin{center}
+      \insertsubsubsectionhead
+    \end{center}
+	\end{frame}
+}
 \begin{document}
 
 \begin{frame}
@@ -76,17 +83,7 @@
 \end{frame}
 
 \section[Information Security]{Information Security}
-
-\begin{frame}{MSB}
-  \begin{itemize}
-    \item Swedish Civil Contingencies Agency (MSB).
-    \item \enquote{MSB is responsible for issues concerning civil protection,
-        public safety, emergency management and civil defence, as long as no
-        other authority has responsibility\cite[About MSB]{msbse}\@.
-        }
-    \item This includes protection of our information systems.
-  \end{itemize}
-\end{frame}
+\subsection{Introduction to Information Security}
 
 \begin{frame}{Why do we as a society need this?}
   \begin{itemize}
@@ -332,9 +329,18 @@
 \end{frame}
 
 \section[Methodilogical support]{MSB:s methodological support}
-\subsection{Introduction to the methodilogical support}
+\begin{frame}{Introduction}{\insertsectionhead}
+  \begin{itemize}
+    \item Swedish Civil Contingencies Agency (MSB).
+    \item \enquote{MSB is responsible for issues concerning civil protection,
+        public safety, emergency management and civil defence, as long as no
+        other authority has responsibility\cite[About MSB]{msbse}\@.
+        }
+    \item This includes protection of our information systems.
+  \end{itemize}
+\end{frame}
 
-\begin{frame}{Methodological support}
+\begin{frame}{Introduction}{\insertsectionhead}
   \begin{itemize}
     \item Support for how to conduct work within information security in an
       organisation.
@@ -356,21 +362,21 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Methodological overview}
+\begin{frame}{Overview}{\insertsectionhead}
   \begin{figure}
     \includegraphics[width=6cm]{Figures/kugghjulet_lis.png}
     \caption{Overview over the methodological support~\cite{msb_metodstod}.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Different parts of the Methodological support}
+\begin{frame}{Components}{\insertsectionhead}
   \begin{figure}
-    \includegraphics[width=\textwidth]{Figures/oversiktsbild-over-metodstegens-olika-delar-och-hur-de-relaterar-till-varandra.png}
+    \includegraphics[width=8cm]{Figures/oversiktsbild-over-metodstegens-olika-delar-och-hur-de-relaterar-till-varandra.png}
     \caption{Different parts of the Methodological support~\cite{msb_metodstod}}
   \end{figure}
 \end{frame}
 
-\begin{frame}{ISO 27000}
+\begin{frame}{ISO 27000}{\insertsectionhead}
   \begin{itemize}
     \item ISO 27000 is an international standard covering working with
       information security.
@@ -381,8 +387,8 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Identify and Analyse --- Overview}
-\begin{frame}{Identify and Analyse --- Overview}
+\subsection{Identify and Analyse}
+\begin{frame}{Overview}{\insertsubsectionhead}
   \begin{itemize}
     \item Analyse the external contexts~\footnote{Omvärldsanalys} and the organisation.
     \item Requires knowledge about how the current situation looks
@@ -398,8 +404,8 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Analysing External and Legal Requirements (Omvärldsanalys)}
-\begin{frame}{Identify and Analyse}
+\subsubsection{Analysing External and Legal Requirements (Omvärldsanalys)}
+\begin{frame}{Analyse External Requirements}{\insertsubsectionhead}
   \begin{itemize}
     \item Mapping 
       \begin{itemize}
@@ -422,10 +428,10 @@
 \end{frame}
 \begin{frame}{Example of external parties}
   \begin{table}
-    \small
+    \footnotesize
     \caption{Example of external parties~\cite{msb_metodstod}}
     \begin{tabularx}{\textwidth}{X X X}
-      Category & Party & Requirement, Role or Impact\\
+      Category & Party & Requirement, Role or\newline Impact\\
       \toprule
       Suppliers: &
       \begin{itemize}
@@ -444,6 +450,7 @@
 \end{frame}
 
 \begin{frame}{Legal Requirements}
+  \footnotesize
   \begin{description}
     \item[General Data Protection Regulation (GDPR)] Managing personal data.
 
@@ -524,6 +531,7 @@
 \end{frame}
 
 \begin{frame}{MSBFS 2016:1}
+  \footnotesize
   5 §  Varje myndighet ska bedriva ett systematiskt och riskbaserat
   informationssäkerhetsarbete med stöd av ett ledningssystem för
   informationssäkerhet. I detta arbete ska standarderna ISO/IEC 27001:2014 och
@@ -544,7 +552,6 @@
       myndighetens informationssäkerhet,
     \item dokumentera granskningar och säkerhetsåtgärder av större betydelse
       som har vidtagits.
-    \item
   \end{enumerate}
 \end{frame}
 
@@ -556,8 +563,8 @@
   rutiner för att lära av sådana inträffade incidenter och utförda åtgärder.
 \end{frame}
 
-\subsection{Organisational Analysis\footnote{Verksamhetsanalys}}
-\begin{frame}{Identify and Analyse --- Organisational Analysis}
+\subsubsection{Organisational Analysis\footnote{Verksamhetsanalys}}
+\begin{frame}{\insertsubsubsectionhead}
   \begin{itemize}
     \item Mapping
     \begin{itemize}
@@ -568,19 +575,19 @@
         \item Co-workers
         \item Support units
       \end{itemize}
-      \item Prerequisites.
+      \item Internal Prerequisites.
       \begin{itemize}
         \item Goals
         \item Strategies
         \item Organisational Culture
         \item Infrastructure
       \end{itemize}
-      \item Identifies the organisations essential informational assets.
+      \item The organisations essential informational assets.
     \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Analyse Informational Assets}
+\begin{frame}{Analyse Informational Assets}{\insertsubsubsectionhead}
   \begin{block}{Informational Assets}
     Informational assets are the organisations information and its resources
     that deals with information. For example to receive, store, process, show or
@@ -588,7 +595,7 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Dividing informational assets}
+\begin{frame}{Dividing informational assets}{\insertsubsubsectionhead}
   \begin{description}
     \item[Primary] Refers to the main information, such as blue prints, logs or
       contracts.
@@ -598,8 +605,15 @@
   What will happen if you do not have your program that is required to read the
   closed proprietary format that the information is stored with?
 \end{frame}
+\begin{frame}{Critical Informational Assets}
+  \centering
+  \begin{block}{What is a critical informational asset?}
+    There are alot of informational assets in an organisation. It is therefore
+    necessary to establish what should be considered a critical asset.
+  \end{block}
+\end{frame}
 
-\begin{frame}{Organisational Analysis}
+\begin{frame}{Performing the organisational analysis}{\insertsubsubsectionhead}
   \begin{block}{General analysis}
     Important to only perform a general analysis of the organisation.
   \end{block}
@@ -620,8 +634,8 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Risk analysis}
-\begin{frame}{Risk analysis}
+\subsubsection{Risk analysis}
+\begin{frame}{Overview}{\insertsubsubsectionhead}
   \begin{itemize}
     \item Identifies the information security risks.
     \item Can be performed over generally over the organisation, or on a
@@ -640,7 +654,7 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{When should the Risk Analysis be performed?}
+\begin{frame}{When should the Risk Analysis be performed?}{\insertsubsubsectionhead}
   \begin{itemize}
     \item Not necessary to perform the risk analysis after analysing the
       organisation or external and legal requirements.
@@ -650,7 +664,7 @@
       organisation.
   \end{itemize}
 \end{frame}
-\begin{frame}{When should the Risk Analysis be performed?}
+\begin{frame}{When should the Risk Analysis be performed?}{\insertsubsubsectionhead}
   Examples of when it can be suitable to perform a risk analysis.
   \begin{itemize}
     \item Procuring new services?
@@ -659,7 +673,8 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{How should the process for Risk Analysis look like?}
+\begin{frame}{How should the process for Risk Analysis look like?}{\insertsubsubsectionhead}
+  \footnotesize
   \begin{block}{Already have a process?}
     If the organisation already have a process in place, then this can be used.
     Since it's already well established in the organisation.
@@ -673,12 +688,14 @@
         used?
       \item What criteria for risk acceptance should be used?
       \end{itemize}
-      In IS0 27001:2018 the management are responsible for making a decision
-      about the process, criteria for consequence and probability levels, and
-      what risk levels should be considered acceptable. 
+  \end{block}
+  \begin{block}{Establish Criterias for Consequence and Probability}
+    In IS0 27001:2018 the management are responsible for making a decision
+    about the process, criteria for consequence and probability levels, and
+    what risk levels should be considered acceptable. 
   \end{block}
 \end{frame}
-\begin{frame}{Establishing a table for grading consequence}
+\begin{frame}{Establishing a table for grading consequence}{\insertsubsubsectionhead}
   Create a table for help establishing consequence level connected to each risk.
   For example:
   \begin{itemize}
@@ -689,7 +706,7 @@
     \item Personal Safety
   \end{itemize}
 \end{frame}
-\begin{frame}{Establishing a table for grading consequence}
+\begin{frame}{Establishing a table for grading consequence}{\insertsubsubsectionhead}
   \begin{table}
     \tiny
     \caption{Table for helping estimate risk~\cite{msb_metodstod}}
@@ -722,8 +739,8 @@
   \end{table}
 \end{frame}
 
-\subsection{GAP Analysis}
-\begin{frame}{GAP Analysis}
+\subsubsection{GAP Analysis}
+\begin{frame}{Overview}{\insertsubsubsectionhead}
   \begin{itemize}
     \item Identifies the gap between the current state of the organisation and
       what level of security the organisation wants to achieve.
@@ -734,7 +751,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{GAP Analysis --- Statement of Applicability}
+\begin{frame}{Statement of Applicability}{\insertsubsubsectionhead}
   Statement of Applicability (Uttalande om tillämplighet)
   \begin{itemize}
     \item What should be covered in the GAP-analysis?
@@ -743,7 +760,7 @@
       meassures that are applicable to the organisation.
   \end{itemize}
 \end{frame}
-\begin{frame}{GAP Analysis --- Perform the GAP analysis}
+\begin{frame}{Perform the GAP analysis}{\insertsubsubsectionhead}
   Based on the list of applicable security meassures
   \begin{itemize}
     \item Is the security meassure already in place?
@@ -751,8 +768,8 @@
     \item Describe the current status of this security meassurement.
   \end{itemize}
 \end{frame}
-\subsection{The Results of the Analysis}
-\begin{frame}{The result of the analysis}
+\subsubsection{The Results of the Analysis}
+\begin{frame}{The result of the analysis}{\insertsubsubsectionhead}
   \begin{itemize}
     \item The result will act as a base when modelling the information security.
     \item Helps to assess how the organisation handles the information security.
@@ -761,7 +778,8 @@
   
 \end{frame}
 
-\section{Utforma}
+\subsection{Utforma}
+\subsubsection{Classifying Information}
 \begin{frame}{Classifying information}
   \begin{itemize}
     \item Method to evaluate how much an informational asset is worth
