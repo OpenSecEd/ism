@@ -59,7 +59,11 @@
 		\tableofcontents[currentsection]
 	\end{frame}
 }
-
+\AtBeginSubsection[]{%
+	\begin{frame}<beamer>{Overview}
+		\tableofcontents[currentsection, currentsubsection]
+	\end{frame}
+}
 \begin{document}
 
 \begin{frame}
