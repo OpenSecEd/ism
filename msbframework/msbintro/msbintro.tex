@@ -2,20 +2,22 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[official]{eurosym}
 \usepackage[english,swedish]{babel}
 \usepackage{booktabs}
 \usepackage[iso,swedish]{isodate}
+\usepackage{acro}
 \usepackage{tabularx}
 \usepackage{url}
 \usepackage{varioref,prettyref}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{subfig}
-\usepackage[style=alphabetic,maxbibnames=99,backend=bibtex]{biblatex}
+\usepackage[style=alphabetic,maxbibnames=99,backend=biber]{biblatex}
 \setbeamertemplate{bibliography item}[text]
 \usepackage[varioref,prettyref]{miunmisc}
 
-\addbibresource{literature.bib}
+\addbibresource{msbintro.bib}
 
 \mode<presentation>{
   \usetheme{Boadilla}
@@ -23,22 +25,25 @@
   \usefonttheme{professionalfonts}
   \setbeamercovered{transparent}
 }
+
 \setbeamerfont{frametitle}{size=\footnotesize}
 \setbeamerfont{framesubtitle}{size=\tiny}
 
+\DeclareAcronym{isms}{
+  short = ISMS,
+  long = Information Security Management Systems,
+}
 
 \title[Intro infosäk]{%
   Introduction to\\
   Swedish Civil Contingencies Agency (MSB) methodological support for introducing \ac{isms}.
 }
-\author{Lennart Franked\footnote{Based on material written by
-    Carina Bengtsson and Daniel Bosk}}
+\author{Lennart Franked\footnote{Lecture is based upon the materials provided by
+  MSB~\cite{msb_metodstod} and previous lectures written by Carina Bengtsson and
+  Daniel Bosk}}
 \institute[MIUN IST]{%
   Department of Informationsystem and Technologies (IST),\\
   Mid Sweden University, Sundsvall.
-
-  %Avdelningen för informations- och kommunikationssytem (IKS),\\
-  %Mittuniversitetet, Sundsvall.
 }
 
 \date{\today}
@@ -51,7 +56,18 @@
 		\tableofcontents[currentsection]
 	\end{frame}
 }
-
+\AtBeginSubsection[]{%
+	\begin{frame}<beamer>{Overview}
+		\tableofcontents[currentsection, currentsubsection]
+	\end{frame}
+}
+\AtBeginSubsubsection[]{%
+	\begin{frame}<beamer>{Overview}
+    \begin{center}
+      \insertsubsubsectionhead{}
+    \end{center}
+	\end{frame}
+}
 \begin{document}
 
 \begin{frame}
@@ -63,18 +79,8 @@
 	% You might wish to add the option [pausesections]
 \end{frame}
 
-\section[Metodstöd]{MSB:s metodstöd}
-
-\begin{frame}{MSB}
-  \begin{itemize}
-    \item Swedish Civil Contingencies Agency (MSB).
-    \item \enquote{MSB is responsible for issues concerning civil protection,
-        public safety, emergency management and civil defence, as long as no
-        other authority has responsibility\cite[About MSB]{msbse}\@.
-        }
-    \item This includes protection of our information systems.
-  \end{itemize}
-\end{frame}
+\section[Information Security]{Information Security}
+\subsection{Introduction to Information Security}
 
 \begin{frame}{Why do we as a society need this?}
   \begin{itemize}
@@ -84,10 +90,58 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  %Lista exempel, typ 1177(patientdata),
-  %transportstyrelsen(registreringsinformation), Arbetsförmedlingen(felaktig
-  %utbetalning).
+\begin{frame}{Tieto incident}
+  \begin{itemize}
+    \item In 2011 Tieto got a hardware problem in one of their
+      datacenters~\cite{Lindkvist2012tdf}. This created disruptions in many of
+      the companies customers IT-system. For example: 
+      \begin{itemize}
+        \item All the pharmacies got problems handing out prescription medicin for a
+          time.
+        \item The swedish vehivle inspection agency could not report the results
+          from the vehicle inspections they did during this time.
+        \item A large logistical company could not handle its operation
+        \item Social offices in Nacka and Sollentuna were unable to pay child
+          support
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}{1177 incident}
+  \begin{itemize}
+    \item In 2019 a sub-contractor of a sub-contractor for a company that was
+      handling the IT-system for three swedish regions health care guides (1177)
+      call line, forgot to secure a backup server that stored the recordings
+      from the phone calls~\cite{Ottsjo2019}.
+    \item Resulted in around 2.7 million (around 170 000 hours) of recordings of
+      confidential phone calls got accessible for the public.
+    \item The recordings contains everything from medical symptoms to social
+      security numbers.
+  \end{itemize}
+\end{frame}
+\begin{frame}{The Swedish Transport Agency}
+  \begin{itemize}
+    \item In 2017 it was revealed that sensitive information from the Swedish
+      Transport Agency database were made available for non-security screened
+      employees abroad~\cite{SvTTransport2017}. 
+    \item Information included:
+      \begin{itemize}
+        \item Driver licences (including picture)
+        \item Company secrets
+        \item Sensitive information about infrastructure (bridges, subways etc)
+        \item Information that can be used to identify armoured cars.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Swedish Public Employment Service}
+  \begin{itemize}
+    \item In 2019 it was found that the Swedish Publich Employment Services
+      (arbetsförmedlingen) automatic system for reporting activity reports to
+      the Swedish Social Insurance Agency (Försäkringskassan) sent incorrect
+      reports~\cite{SvTPublicEmpl2019}.
+    \item It was estimated that 10 to 15 percent of the decisions were incorrect.
+    \item Resulted in that approximately 70 000 decisions could have been wrong.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{What is information security?}
@@ -130,14 +184,14 @@
 
 \begin{frame}{What is information security?}
   \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-struktur.png}
+    \includegraphics[height=0.7\textheight]{Figures/infosak-struktur.png}
     \caption{Structure of information security.}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Structure}
   \begin{figure}
-    \includegraphics[height=0.7\textheight]{infosak-process.png}
+    \includegraphics[height=0.7\textheight]{Figures/infosak-process.png}
     \caption{To work with information security}
   \end{figure}
 \end{frame}
@@ -164,6 +218,7 @@
   \end{description}
 \end{frame}
 
+\subsection{Information Security Management System}
 \begin{frame}{Management System}
   \begin{itemize}
     \item Everyone have a \enquote{system} to manage an organisation.
@@ -187,6 +242,16 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Governance documents}
+  \begin{itemize}
+    \item Plan of action, policies, guidelines, \dots
+    \item Policy: What do we want to achieve?
+      One extensive, or multiple smaller ones.
+    \item The governance documents should be integrated into the organisations
+      current structure.
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Apply \ac{isms}}
   Not only establish, but also
   \begin{itemize}
@@ -195,16 +260,6 @@
     \item monitor,
     \item audit,
     \item maintain and improve
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Governance documents}
-  \begin{itemize}
-    \item Plan of action, policies, guidelines, \dots
-    \item Policy: What do we want to achieve?
-      One extensive, or multiple smaller ones.
-    \item The governance documents should be integrated into the organisations
-      current structure.
   \end{itemize}
 \end{frame}
 
@@ -225,7 +280,7 @@
 \begin{frame}{Create commitment}
   \begin{itemize}
     \item The top management have the overall responsibility for the
-      organisation -- This involves information security and security incidents.
+      organisation --- This involves information security and security incidents.
     \item Important to make the management understand the importance of
       information security.
   \end{itemize}
@@ -244,7 +299,7 @@
   \end{itemize}
 \end{frame}
 
-\section{ISO 27000}
+\subsection{ISO 27000}
 \begin{frame}{ISO 27001}
   \begin{itemize}
     \item ISO 27001 is a continuous process that strives towards constant
@@ -255,7 +310,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{ISO 27002 -- What should be done?}
+\begin{frame}{ISO 27002 --- What should be done?}
   \begin{itemize}
     \item Security Policy.
     \item Organising the information security.
@@ -272,8 +327,18 @@
 \end{frame}
 
 \section[Methodilogical support]{MSB:s methodological support}
+\begin{frame}{Introduction}{\insertsectionhead}
+  \begin{itemize}
+    \item Swedish Civil Contingencies Agency (MSB).
+    \item \enquote{MSB is responsible for issues concerning civil protection,
+        public safety, emergency management and civil defence, as long as no
+        other authority has responsibility~\cite[About MSB]{msbse}\@.
+        }
+    \item This includes protection of our information systems.
+  \end{itemize}
+\end{frame}
 
-\begin{frame}{Methodological support}
+\begin{frame}{Introduction}{\insertsectionhead}
   \begin{itemize}
     \item Support for how to conduct work within information security in an
       organisation.
@@ -295,21 +360,21 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Methodological overview}
+\begin{frame}{Overview}{\insertsectionhead}
   \begin{figure}
     \includegraphics[width=6cm]{Figures/kugghjulet_lis.png}
     \caption{Overview over the methodological support~\cite{msb_metodstod}.}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Different parts of the Methodological support}
+\begin{frame}{Components}{\insertsectionhead}
   \begin{figure}
-    \includegraphics[width=\textwidth]{Figures/oversiktsbild-over-metodstegens-olika-delar-och-hur-de-relaterar-till-varandra.png}
+    \includegraphics[width=8cm]{Figures/oversiktsbild-over-metodstegens-olika-delar-och-hur-de-relaterar-till-varandra.png}
     \caption{Different parts of the Methodological support~\cite{msb_metodstod}}
   \end{figure}
 \end{frame}
 
-\begin{frame}{ISO 27000}
+\begin{frame}{ISO 27000}{\insertsectionhead}
   \begin{itemize}
     \item ISO 27000 is an international standard covering working with
       information security.
@@ -320,25 +385,25 @@
   \end{itemize}
 \end{frame}
 
-\section{Identify and Analyse}
-\begin{frame}{Identify and Analyse --- Introduction}
+\subsection{Identify and Analyse}
+\begin{frame}{Overview}{\insertsubsectionhead}
   \begin{itemize}
-    \item Analyse the external contexts (business intelligence)~\footnote{Omvärldsanalys} and the organisation.
+    \item Analyse the external contexts~\note{Omvärldsanalys} and the organisation.
     \item Requires knowledge about how the current situation looks
-      like~\footnote{Nulägesanalys}.
+      like~\note{Nulägesanalys}.
       \begin{itemize}
         \item Look over existing documentation.
         \item Discuss within the organisation.
       \end{itemize}
-    \item Mapping of the informational assets\footnote{informationskartläggning}.
+    \item Mapping of the informational assets\note{informationskartläggning}.
     \item Analyse the risks connected to the informational assets.
     \item Find suitable security measurements.
     \item Existing security measurements are controlled using a GAP-analysis
   \end{itemize}
 \end{frame}
 
-\subsection{Analysing External and Legal Requirements (Omvärldsanalys)}
-\begin{frame}{Identify and Analyse}
+\subsubsection{Analysing External and Legal Requirements (Omvärldsanalys)}
+\begin{frame}{Analyse External Requirements}{\insertsubsectionhead}
   \begin{itemize}
     \item Mapping 
       \begin{itemize}
@@ -361,10 +426,10 @@
 \end{frame}
 \begin{frame}{Example of external parties}
   \begin{table}
-    \small
+    \footnotesize
     \caption{Example of external parties~\cite{msb_metodstod}}
     \begin{tabularx}{\textwidth}{X X X}
-      Category & Party & Requirement, Role or Impact\\
+      Category & Party & Requirement, Role or\newline Impact\\
       \toprule
       Suppliers: &
       \begin{itemize}
@@ -383,6 +448,7 @@
 \end{frame}
 
 \begin{frame}{Legal Requirements}
+  \footnotesize
   \begin{description}
     \item[General Data Protection Regulation (GDPR)] Managing personal data.
 
@@ -412,46 +478,45 @@
   \end{itemize}
 \end{frame}
 
-
 \begin{frame}{GDPR}{General Data Protection Regulation}
   \begin{itemize}
     \item Replacing Personal Data Act 1998:204
     \item Regulates how personal data are allowed to be stored and used.
       \begin{itemize}
-        \item Protects a persons right of privacy\cite[art. 5]{eu:gdpr}
+        \item Protects a persons right of privacy~\cite[art. 5]{eu:gdpr}
         \item Personal data can only be stored for as long as there is a need
-          for it\cite[art. 5]{eu:gdpr}.
+          for it~\cite[art. 5]{eu:gdpr}.
         \item Each person must give explicit consent to a company/organisation
-          to store, publish or share personal data about them\cite[art.
+          to store, publish or share personal data about them~\cite[art.
           7]{eu:gdpr}.  
         \item Ensure that a person have the right to get access
           to all personal
-          data that has been collected about them\cite[art. 15]{eu:gdpr}.
-        \item Persons right to erasure\cite[art. 17]{eu:gdpr}. 
+          data that has been collected about them~\cite[art. 15]{eu:gdpr}.
+        \item Persons right to erasure~\cite[art. 17]{eu:gdpr}. 
       \end{itemize}
   \end{itemize}
 \end{frame}
 \begin{frame}{GDPR cont.}{General Data Protection Regulation}
     \begin{itemize}
       \item Possibility to transfer personal data (data
-          portability)\cite[art. 20]{eu:gdpr}.  
-      \item Data protection by design and default \cite[art. 25]{eu:gdpr}.
-      \item Records regarding processing activities must be maintained \cite[art.
+          portability)~\cite[art. 20]{eu:gdpr}.  
+      \item Data protection by design and default~\cite[art. 25]{eu:gdpr}.
+      \item Records regarding processing activities must be maintained~\cite[art.
         30]{eu:gdpr}.
       \item Personal data breaches must be reported to the supervisory
-        authority, without undue delay, not later than 72 hours\cite[art.
+        authority, without undue delay, not later than 72 hours~\cite[art.
         33]{eu:gdpr}.
     \end{itemize}
 \end{frame}
 \begin{frame}{GDPR cont.}{General Data Protection Regulation}
 \begin{itemize}
     \item Individuals needs to be informed about the personal data
-        breach\cite[art. 34]{eu:gdpr}.
-    \item An independent agency should ensure that these rules are followed
-      \cite[art 51]{eu:gdpr}.
+        breach~\cite[art. 34]{eu:gdpr}.
+    \item An independent agency should ensure that these rules are 
+      followed~\cite[art 51]{eu:gdpr}.
     \item If the organisation does not comply to these regulations, they can be
-      fined up to 4\% worldwide turnover or €20 Million, whichever is greater
-      \cite[art 83]{eu:gdpr}.
+      fined up to 4\% worldwide turnover or \euro{}20 Million, whichever is 
+      greater~\cite[art 83]{eu:gdpr}.
     \item and much more.
 \end{itemize}
 \end{frame}
@@ -464,6 +529,7 @@
 \end{frame}
 
 \begin{frame}{MSBFS 2016:1}
+  \footnotesize
   5 §  Varje myndighet ska bedriva ett systematiskt och riskbaserat
   informationssäkerhetsarbete med stöd av ett ledningssystem för
   informationssäkerhet. I detta arbete ska standarderna ISO/IEC 27001:2014 och
@@ -484,7 +550,6 @@
       myndighetens informationssäkerhet,
     \item dokumentera granskningar och säkerhetsåtgärder av större betydelse
       som har vidtagits.
-    \item
   \end{enumerate}
 \end{frame}
 
@@ -496,8 +561,9 @@
   rutiner för att lära av sådana inträffade incidenter och utförda åtgärder.
 \end{frame}
 
-\subsection{Organisational Analysis\footnote{Verksamhetsanalys}}
-\begin{frame}{Identify and Analyse --- Organisational Analysis}
+\subsubsection{Organisational Analysis}
+\begin{frame}{\insertsubsubsectionhead}
+  \note{Verksamhetsanalys}
   \begin{itemize}
     \item Mapping
     \begin{itemize}
@@ -508,27 +574,27 @@
         \item Co-workers
         \item Support units
       \end{itemize}
-      \item Prerequisites.
+      \item Internal Prerequisites.
       \begin{itemize}
         \item Goals
         \item Strategies
         \item Organisational Culture
         \item Infrastructure
       \end{itemize}
-      \item Identifies the organisations essential informational assets.
+      \item The organisations essential informational assets.
     \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Analyse Informational Assets}
-  \begin{block}
+\begin{frame}{Analyse Informational Assets}{\insertsubsubsectionhead}
+  \begin{block}{Informational Assets}
     Informational assets are the organisations information and its resources
     that deals with information. For example to receive, store, process, show or
     communicate it~\cite{msb_metodstod}.
   \end{block}
 \end{frame}
 
-\begin{frame}{Dividing informational assets}
+\begin{frame}{Dividing informational assets}{\insertsubsubsectionhead}
   \begin{description}
     \item[Primary] Refers to the main information, such as blue prints, logs or
       contracts.
@@ -538,8 +604,15 @@
   What will happen if you do not have your program that is required to read the
   closed proprietary format that the information is stored with?
 \end{frame}
+\begin{frame}{Critical Informational Assets}
+  \centering
+  \begin{block}{What is a critical informational asset?}
+    There are alot of informational assets in an organisation. It is therefore
+    necessary to establish what should be considered a critical asset.
+  \end{block}
+\end{frame}
 
-\begin{frame}{Organisational Analysis}
+\begin{frame}{Performing the organisational analysis}{\insertsubsubsectionhead}
   \begin{block}{General analysis}
     Important to only perform a general analysis of the organisation.
   \end{block}
@@ -548,6 +621,164 @@
   \end{block}
 \end{frame}
 
+\begin{frame}{Documenting the informational assets}
+  When documenting the informational assets, ensure that at least the following
+  is documented:
+  \begin{itemize}
+    \item Name
+    \item Description
+    \item Type of information, for example personal data.
+    \item Critical?
+    \item Owner and contact information
+  \end{itemize}
+\end{frame}
+
+\subsubsection{Risk analysis}
+\begin{frame}{Overview}{\insertsubsubsectionhead}
+  \begin{itemize}
+    \item Identifies the information security risks.
+    \item Can be performed over generally over the organisation, or on a
+      specific object.
+    \item The identified risks are then assessed based on probability and
+      consequence.
+  \end{itemize}
+  \begin{block}{What to acheive with a risk analysis}
+    \begin{itemize}
+      \item What can happen?
+      \item How probable is it?
+      \item What is the consequences?
+    \end{itemize}
+    Note that the result of the risk analysis shouldn't be seen as the absolute
+    truth.
+  \end{block}
+\end{frame}
+
+\begin{frame}{When should the Risk Analysis be performed?}{\insertsubsubsectionhead}
+  \begin{itemize}
+    \item Not necessary to perform the risk analysis after analysing the
+      organisation or external and legal requirements.
+    \item If it is performed after, then the results from these can be used in
+      the risk analysis.
+    \item Otherwise, it is possible to rely on the existing knowledge of the
+      organisation.
+  \end{itemize}
+\end{frame}
+\begin{frame}{When should the Risk Analysis be performed?}{\insertsubsubsectionhead}
+  Examples of when it can be suitable to perform a risk analysis.
+  \begin{itemize}
+    \item Procuring new services?
+    \item Outsouring
+    \item Organisational changes
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{How should the process for Risk Analysis look like?}{\insertsubsubsectionhead}
+  \footnotesize
+  \begin{block}{Already have a process?}
+    If the organisation already have a process in place, then this can be used.
+    Since it's already well established in the organisation.
+  \end{block} 
+  \begin{block}{If there isn't a process in place?}
+    Some key points to think about when establishing a process for Risk
+    Analysis.
+    \begin{itemize}
+      \item How should the process look like?
+      \item What criteria for consequence and probability estimation should be
+        used?
+      \item What criteria for risk acceptance should be used?
+      \end{itemize}
+  \end{block}
+  \begin{block}{Establish Criterias for Consequence and Probability}
+    In IS0 27001:2018 the management are responsible for making a decision
+    about the process, criteria for consequence and probability levels, and
+    what risk levels should be considered acceptable. 
+  \end{block}
+\end{frame}
+\begin{frame}{Establishing a table for grading consequence}{\insertsubsubsectionhead}
+  Create a table for help establishing consequence level connected to each risk.
+  For example:
+  \begin{itemize}
+    \item Financial loss
+    \item Negative effect
+    \item Infringement
+    \item Environmental
+    \item Personal Safety
+  \end{itemize}
+\end{frame}
+\begin{frame}{Establishing a table for grading consequence}{\insertsubsubsectionhead}
+  \begin{table}
+    \tiny
+    \caption{Table for helping estimate risk~\cite{msb_metodstod}}
+    \begin{tabularx}{\textwidth}{X | X | X | X}
+    Consequence & Financial loss & Loss of reputation & Disruption in the
+    organisation\\ 
+    \toprule
+
+    Severe & Two million SEK and above, or 20\% over budget & Continous negative
+    reporting in media or by organised groups in social media. Focused on not
+    just individuals but the organisation as a whole.& Disruptions in one or
+    several critical organisations that are longer than acceptable.\\
+
+    \midrule
+    Considerable & 500 000 - 2 million SEK or 10-20\% over budget & Negative
+    reporting in local and national media and in organised social media groups.
+    Focused mainly on special instances or actions from a certain individual~(s)
+    & Disruption in one critical organisation that are longer than acceptable.
+    \\ 
+    \midrule
+    Moderate & 1 - 500 000 or 5-10 \% over budget & A few dissatisfied
+    individuals that express themselves in social medias or a smaller notice in
+    local media.& Disruptions in one or several non-critical organisations that
+    are longer than acceptable.\\ 
+    \midrule
+    Negligible & No loss & Little or non negative attention in media or social
+    media & Negligable disruption in the organisation\\ 
+    \bottomrule
+  \end{tabularx}
+  \end{table}
+\end{frame}
+
+\subsubsection{GAP Analysis}
+\begin{frame}{Overview}{\insertsubsubsectionhead}
+  \begin{itemize}
+    \item Identifies the gap between the current state of the organisation and
+      what level of security the organisation wants to achieve.
+    \item For example, the current state versus the actions mentioned in ISO
+      27001~\cite[Bilaga A]{iso27001}
+    \item Develop an action plan on how to fix the objects that aren't 
+      sufficient.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Statement of Applicability}{\insertsubsubsectionhead}
+  Statement of Applicability (Uttalande om tillämplighet)
+  \begin{itemize}
+    \item What should be covered in the GAP-analysis?
+    \item Select security meassures, either from previous analyses, or pick all.  
+    \item Once finished, the organisation have a complete list of security
+      meassures that are applicable to the organisation.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Perform the GAP analysis}{\insertsubsubsectionhead}
+  Based on the list of applicable security meassures
+  \begin{itemize}
+    \item Is the security meassure already in place?
+    \item Estimate the severity of the security meassure.
+    \item Describe the current status of this security meassurement.
+  \end{itemize}
+\end{frame}
+\subsubsection{The Results of the Analysis}
+\begin{frame}{The result of the analysis}{\insertsubsubsectionhead}
+  \begin{itemize}
+    \item The result will act as a base when modelling the information security.
+    \item Helps to assess how the organisation handles the information security.
+    \item Identifying security measures.
+  \end{itemize}
+  
+\end{frame}
+
+\subsection{Utforma}
+\subsubsection{Classifying Information}
 \begin{frame}{Classifying information}
   \begin{itemize}
     \item Method to evaluate how much an informational asset is worth
@@ -615,69 +846,9 @@
   \end{figure}
 \end{frame}
 
-\subsection{Risk analysis}
-\begin{frame}{Risk analysis}
-  \begin{itemize}
-    \item Identifies the information security risks.
-    \item Can be performed over generally over the organisation, or on a
-      specific object.
-    \item The identified risks are then assessed based on probability and
-      consequence.
-  \end{itemize}
-\end{frame}
+%=======================================================================%
 
-\begin{frame}{When should the Risk Analysis be performed?}
-  \begin{itemize}
-    \item Not necessary to perform the risk analysis after the business
-      intelligence and organisational analysis.
-    \item If it is performed after, then the results from these can be used in
-      the risk analysis.
-    \item Otherwise, it is possible to rely on the existing knowledge of the
-      organisation.
-  \end{itemize}
-\end{frame}
 
-\begin{frame}{How should the process for Risk Analysis look like?}
-  \begin{block}{Already have a process?}
-    If the organisation already have a process in place, then this can be used.
-    Since it's already well established in the organisation.
-  \end{block} 
-  \begin{block}{If there isn't a process in place?}
-    Some key points to think about when establishing a process for Risk
-    Analysis.
-    \begin{itemize}
-      \item How should the process look like?
-      \item What criteria for consequence and probability estimation should be
-        used?
-      \item What criteria for risk acceptance should be used?
-      \end{itemize}
-      In IS0 27001:2018 the management are responsible for making a decision
-      about the process, criteria for consequence and probability levels, and
-      what risk levels should be considered acceptable. 
-  \end{block}
-\end{frame}
-
-\subsection{GAP Analysis}
-\begin{frame}{GAP Analysis}
-  \begin{itemize}
-    \item Identifies the gap between the current state of the organisation and
-      what level of security the organisation wants to achieve.
-    \item For example, the current state versus the actions mentioned in ISO
-      27001~\cite[Bilaga A]{iso27001}
-    \item Develop an action plan on how to fix the objects that aren't 
-      sufficient.
-  \end{itemize}
-\end{frame}
-
-\subsection{The Results of the Analysis}
-\begin{frame}{The result of the analysis}
-  \begin{itemize}
-    \item The result will act as a base when modelling the information security.
-    \item Helps to assess how the organisation handles the information security.
-    \item Identifying security measures.
-  \end{itemize}
-  
-\end{frame}
 
 \begin{frame}[allowframebreaks]{References}
 	\small
