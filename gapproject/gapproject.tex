@@ -1,11 +1,11 @@
-% $Id$
 \documentclass[a4paper]{article}
-\usepackage[swedish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{csquotes}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-\usepackage{cleveref}
-\usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
+\usepackage[swedish]{cleveref}
+\usepackage[backend=biber]{biblatex}
 \addbibresource{gapproject.bib}
 \usepackage{authblk}
 
@@ -28,12 +28,6 @@
 
 IT-säkerhet är en process.
 En IT-miljö måste systematiskt granskas för att kunna upprätthålla säkerheten.
-Detta är extra tydligt i de senaste årens nyheter, då ett flertal stora globala 
-företag blev uppmärksammade den hårda vägen på att de hade stora brister 
-i säkerheten~\cite[se][]{Fisher2011rsa,Hunt2011abs,Cluley2012twp,%
-  Oberheide2010bao,Cubrilovic2009rhf,%
-  Jones2013targethack,Ducklin2014targethack,Zetter2014targethack%
-}.
 
 Syftet med uppgiften är att du skall fördjupa dina kunskaper i analys av 
 informationssäkerheten i en verksamhet.
@@ -63,9 +57,9 @@ och~\cite[Bilaga A]{iso27701}, alt~\cite[VERKTYG-ANALYS-GAP.XLSX]{MSB2018anv}
 
 Antalet områden ni väljer att göra en gap-analys på beror på hur många ni är i gruppen. Räkna på ca
 10 åtgärdsmål eller 1 --- 2 områden per gruppmedlem. Vissa områden har bara några få frågor, och då
-får den gruppmedlemmen välja flera områden för att uppnå rätt omfattning. \emph{Exempel: gruppmedlem 1
+får den gruppmedlemmen välja flera områden för att uppnå rätt omfattning. Exempel: gruppmedlem 1
 väljer område A5 och A6~\cite[Bilaga A]{iso27001}, gruppmedlem 2 väljer enbart A8~\cite[Bilaga
-A]{iso27001} osv.}
+A]{iso27001} osv.
 
 \section{Examination}
 
@@ -82,7 +76,6 @@ Rapporten ska skrivas i två utföranden:
   \item En anonymiserad version av denna rapport (kopplingar till företaget
     skall plockas bort i rapporten) som lämnas in i lärplattformen.
 \end{itemize}
-
 
 % XXX muntlig presentation av projekt?
 %Projektet redovisas även muntligen i slutet av kursen.
